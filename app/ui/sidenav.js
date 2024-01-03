@@ -1,5 +1,8 @@
+// "use client";
+
 import Link from "next/link";
 import Image from "next/image";
+// import { CldImage } from "next-cloudinary";
 import NavLinks from "@/app/ui/navlinks";
 
 //test
@@ -17,6 +20,15 @@ export default function SideNav() {
           height={40}
           priority
         />
+        {/* <div className="h-20 w-20"> */}
+        {/* <CldImage
+          src="https://res.cloudinary.com/daizdx4p7/image/upload/v1697901936/chevrolet_camaro_wl5arc.jpg"
+          alt="Car"
+          sizes="100vw"
+          crop="fill"
+          fill={true}
+        /> */}
+        {/* </div> */}
       </Link>
       <div className="flex grow flex-row space-x-2 md:flex-col md:space-x-0 md:space-y-2">
         <NavLinks />
