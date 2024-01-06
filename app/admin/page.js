@@ -1,24 +1,58 @@
-// "use client";
+"use client";
 
-// import { CldImage } from "next-cloudinary";
-import Image from "next/image";
-
-export const metadata = {
-  title: "Admin",
-  description: "My Admin Page",
-};
+import { CldUploadWidget } from "next-cloudinary";
+import { useState } from "react";
 
 export default function AdminPage() {
+  const [secureUrl, setSecureUrl] = useState("");
+  const [originalFilename, setOriginalFilename] = useState("");
+  console.log(originalFilename);
+  console.log(secureUrl);
+
+  function handleOnClick() {
+    setSecureUrl("");
+    setOriginalFilename("");
+  }
+
   return (
     <>
       <p>Admin Page</p>
+      <CldUploadWidget
+        uploadPreset="imhlj8iy"
+        options={{ folder: "my-test" }}
+        onSuccess={(results) => {
+          console.log("secure_url", results.info.secure_url);
+          setSecureUrl(results.info.secure_url);
+          setOriginalFilename(results.info.original_filename);
+        }}
+      >
+        {({ open }) => {
+          return (
+            <button
+              onClick={() => open()}
+              className="inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-slate-600 hover:bg-slate-500"
+            >
+              Upload Image
+            </button>
+          );
+        }}
+      </CldUploadWidget>
 
-      <Image
-        src="https://res.cloudinary.com/daizdx4p7/image/upload/v1697901936/chevrolet_camaro_wl5arc.jpg"
-        alt="Car"
-        width={100}
-        height={40}
-      />
+      {secureUrl && (
+        <>
+          <div className="w-100 h-100">
+            <img src={secureUrl} alt="Uploaded image" />
+          </div>
+          <p>Selected file: {originalFilename}</p>
+          <p>Secure url: {secureUrl}</p>
+          <button
+            onClick={handleOnClick}
+            className="inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-slate-600 hover:bg-slate-500"
+          >
+            Ok
+          </button>
+        </>
+      )}
     </>
   );
 }
