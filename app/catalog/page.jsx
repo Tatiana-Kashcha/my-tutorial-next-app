@@ -14,6 +14,11 @@ export default async function CatalogPage() {
     <div className="flex flex-col ">
       <h2>Catalog Page</h2>
 
+      <ul>
+        <li>1</li>
+        <li>2</li>
+      </ul>
+
       {/* <div className="flex flex-wrap relative list-none gap-5  p-0 mb-0 justify-around">
         {CardsCatalog.map((fetchCatalog, i) => {
           return (
