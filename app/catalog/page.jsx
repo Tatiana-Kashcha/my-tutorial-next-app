@@ -1,6 +1,7 @@
-import Image from "next/image";
+// import Image from "next/image";
 import { fetchCatalog } from "../lib/data";
-import clsx from "clsx";
+// import clsx from "clsx";
+import { CatalogList } from "../ui/catalog/CatalogList";
 
 export const metadata = {
   title: "Catalog",
@@ -12,12 +13,9 @@ export default async function CatalogPage() {
   console.log(CardsCatalog);
   return (
     <div className="flex flex-col ">
-      <h2>Catalog Page</h2>
+      <h2 className="mb-4">Catalog Page</h2>
 
-      <ul>
-        <li>1</li>
-        <li>2</li>
-      </ul>
+      <CatalogList data={CardsCatalog} />
 
       {/* <div className="flex flex-wrap relative list-none gap-5  p-0 mb-0 justify-around">
         {CardsCatalog.map((fetchCatalog, i) => {
