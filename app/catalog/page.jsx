@@ -1,4 +1,4 @@
-// import Image from "next/image";
+import Image from "next/image";
 import { fetchCatalog } from "../lib/data";
 // import clsx from "clsx";
 import { CatalogList } from "../ui/catalog/CatalogList";
@@ -10,9 +10,16 @@ export const metadata = {
 
 export default async function CatalogPage() {
   const CardsCatalog = await fetchCatalog();
-  console.log(CardsCatalog);
+  // console.log(CardsCatalog);
   return (
     <div className="flex flex-col ">
+      <Image
+        src="https://res.cloudinary.com/daizdx4p7/image/upload/v1697901936/chevrolet_camaro_wl5arc.jpg"
+        alt="Car"
+        width={100}
+        height={40}
+        // priority
+      />
       <h2 className="mb-4">Catalog Page</h2>
 
       <CatalogList data={CardsCatalog} />
