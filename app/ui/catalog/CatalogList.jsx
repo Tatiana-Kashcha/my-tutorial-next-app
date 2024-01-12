@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import { CatalogListItems } from "./CatalogListItems";
 
 export const CatalogList = ({ data }) => {
@@ -12,13 +12,6 @@ export const CatalogList = ({ data }) => {
             className="mb-3 rounded-lg bg-center bg-cover bg-no-repeat object-cover cursor-pointer"
           >
             <CatalogListItems car={car} />
-            <Image
-              src="https://res.cloudinary.com/daizdx4p7/image/upload/v1697901936/chevrolet_camaro_wl5arc.jpg"
-              alt="Car"
-              width={100}
-              height={40}
-              // priority
-            />
           </li>
         ))}
       </ul>

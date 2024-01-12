@@ -14,13 +14,6 @@ export const CatalogListItems = ({ car }) => {
           width={274}
           height={254}
         />
-        {/* <img
-          src={url}
-          alt="Car"
-          className="block object-cover h-full object-center"
-          width={274}
-          height={254}
-        /> */}
       </div>
       <p>Model: {car.make}</p>
       <p>Price $: {car.prise}</p>
