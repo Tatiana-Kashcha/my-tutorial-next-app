@@ -1,5 +1,5 @@
 "use client";
-// import Image from "next/image";
+import Image from "next/image";
 
 export const CatalogList = ({ data }) => {
   return (
@@ -19,6 +19,13 @@ export const CatalogList = ({ data }) => {
             </div>
             <p>Model: {car.make}</p>
             <p>Price $: {car.prise}</p>
+            <Image
+              src="https://res.cloudinary.com/daizdx4p7/image/upload/v1697901936/chevrolet_camaro_wl5arc.jpg"
+              alt="Car"
+              width={100}
+              height={40}
+              // priority
+            />
           </li>
         ))}
       </ul>
