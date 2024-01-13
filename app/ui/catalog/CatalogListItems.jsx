@@ -3,8 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const CatalogListItems = ({ car }) => {
-  const url = car.img_url;
-  console.log(url);
+  //   const url = car.img_url;
+  //   console.log(url);
+  //   console.log(car);
   return (
     <div>
       <div className="mb-2 relative flex items-center justify-center overflow-hidden block w-[274px] h-[254px] border border-gray-200 ">

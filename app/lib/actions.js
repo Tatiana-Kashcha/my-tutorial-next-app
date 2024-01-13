@@ -28,3 +28,23 @@ export async function createProduct(formData) {
     };
   }
 }
+
+export async function fetchProductById(id) {
+  try {
+    const data = await sql`
+      SELECT make,
+      id,
+      prise,
+      img_url
+      FROM 
+      public.catalog_list
+      WHERE id IN (${id});`;
+
+    const result = data.rows;
+    // console.log(result);
+    return result;
+  } catch (err) {
+    console.error("Database Error:", err);
+    throw new Error("Failed to fetch product.");
+  }
+}

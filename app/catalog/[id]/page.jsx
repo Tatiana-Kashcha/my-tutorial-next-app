@@ -1,18 +1,23 @@
-// "use client";
+import { fetchProductById } from "../../lib/actions";
+import { CardProductById } from "../../ui/catalog/CardProductById";
 
-// import { usePathname, useSearchParams } from "next/navigation";
+export default async function ProductIdPage({ params }) {
+  const id = Number(params.id);
+  console.log(id);
 
-export default function ProductIdPage({ params }) {
-  //   const searchParams = useSearchParams();
-  //   const pathname = usePathname();
-  //   const params = new URLSearchParams(searchParams);
-  //   const id = searchParams.get("id");
-  //   console.log(pathname);
-  const id = params.id;
+  const productById = await fetchProductById(id);
+  console.log(productById);
+
+  if (typeof id === "number") {
+    console.log('Змінна id має тип "number".');
+  } else {
+    console.log("Змінна id не є числовою.");
+  }
 
   return (
     <>
       <p>Product Id Page {id}</p>
+      <CardProductById data={productById} />
     </>
   );
 }
