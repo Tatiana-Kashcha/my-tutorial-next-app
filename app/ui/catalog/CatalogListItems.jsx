@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 
 export const CatalogListItems = ({ car }) => {
   const url = car.img_url;
@@ -18,6 +19,12 @@ export const CatalogListItems = ({ car }) => {
       </div>
       <p>Model: {car.make}</p>
       <p>Price $: {car.prise}</p>
+
+      <Link href={`/catalog/${car.id}`}>
+        <button className="inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-green-600 hover:bg-green-500">
+          View
+        </button>
+      </Link>
     </div>
   );
 };
