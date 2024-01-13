@@ -3,7 +3,7 @@
 import { CatalogListItems } from "./CatalogListItems";
 
 export const CatalogList = ({ data }) => {
-  console.log(data);
+  // console.log(data);
   return (
     <>
       <ul className="mb-4 flex flex-wrap relative list-none gap-5  p-0 mb-0 justify-around">
