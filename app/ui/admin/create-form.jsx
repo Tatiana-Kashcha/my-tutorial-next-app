@@ -61,7 +61,8 @@ export default function CreateForm({ myPreset }) {
                   htmlFor="image"
                   className="mb-2 block text-sm font-medium"
                 >
-                  Image url selected file - {originalFilename}
+                  Image url selected file - {originalFilename} &quot;
+                  {originalFilename}&quot;
                 </label>
                 <div className="relative mt-2 rounded-md">
                   <input
