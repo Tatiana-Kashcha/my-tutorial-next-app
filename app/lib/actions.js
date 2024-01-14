@@ -29,7 +29,7 @@ export async function createProduct(formData) {
           INSERT INTO public.catalog_list (id, make, prise, img_url)
           VALUES (DEFAULT, ${make}, ${priseNew}, ${img_url}) 
         `;
-    revalidatePath("/catalog");
+    // revalidatePath("/catalog");
 
     return { message: "Create new product." };
   } catch (error) {
@@ -59,11 +59,12 @@ export async function fetchProductById(id) {
 
 export async function deleteProduct(id) {
   try {
-    await sql`DELETE FROM 
+    await sql`
+    DELETE FROM 
     public.catalog_list
     WHERE id IN (${id})`;
-    
-    revalidatePath("/catalog");
+
+    // revalidatePath("/catalog");
     return { message: "Deleted Product." };
   } catch (error) {
     console.error("Database Error:", error);
