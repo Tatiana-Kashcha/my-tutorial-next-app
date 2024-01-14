@@ -45,7 +45,7 @@ export default function CreateForm({ myPreset }) {
             </div>
           </div>
 
-          {/* <div className="mb-4">
+          <div className="mb-4">
             <p className="mb-2 block text-sm font-medium">Product image</p>
             {secureUrl && (
               <>
@@ -61,7 +61,7 @@ export default function CreateForm({ myPreset }) {
                   htmlFor="image"
                   className="mb-2 block text-sm font-medium"
                 >
-                  Image url selected file - "{originalFilename}"
+                  Image url selected file - {originalFilename}
                 </label>
                 <div className="relative mt-2 rounded-md">
                   <input
@@ -74,7 +74,7 @@ export default function CreateForm({ myPreset }) {
                 </div>
               </>
             )}
-          </div> */}
+          </div>
         </div>
         <button
           type="submit"
