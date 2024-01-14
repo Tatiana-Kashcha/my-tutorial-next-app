@@ -3,7 +3,7 @@
 import { sql } from "@vercel/postgres";
 // import { z } from "zod";
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
+// import { redirect } from "next/navigation";
 
 export async function createProduct(formData) {
   const rawFormData = {
@@ -14,9 +14,9 @@ export async function createProduct(formData) {
 
   const { make, prise, img_url } = rawFormData;
   const priseNew = Number(prise);
-  console.log(make);
-  console.log(priseNew);
-  console.log(img_url);
+  // console.log(make);
+  // console.log(priseNew);
+  // console.log(img_url);
 
   // if (typeof priseNew === "number") {
   //   console.log('Змінна priseNew має тип "number".');
@@ -35,8 +35,6 @@ export async function createProduct(formData) {
   } catch (error) {
     return { message: "Database Error: Failed to Create product." };
   }
-
-  redirect("/catalog");
 }
 
 export async function fetchProductById(id) {
