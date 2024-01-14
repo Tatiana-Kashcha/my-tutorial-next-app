@@ -13,8 +13,8 @@ export default function CreateForm({ myPreset }) {
 
   return (
     <div className="relative">
-      {/* <form action={createProduct}>
-        <div>
+      <form action={createProduct}>
+        {/* <div>
           <div className="mb-4">
             <label htmlFor="name" className="mb-2 block text-sm font-medium">
               Product name
@@ -75,7 +75,7 @@ export default function CreateForm({ myPreset }) {
               </>
             )}
           </div>
-        </div>
+        </div> */}
         <button
           type="submit"
           aria-disabled={pending}
@@ -83,7 +83,7 @@ export default function CreateForm({ myPreset }) {
         >
           Create
         </button>
-      </form> */}
+      </form>
 
       <CldUploadWidget
         uploadPreset={myPreset}
