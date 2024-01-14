@@ -2,6 +2,8 @@
 
 import { sql } from "@vercel/postgres";
 // import { z } from "zod";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export async function createProduct(formData) {
   const rawFormData = {
@@ -16,25 +18,25 @@ export async function createProduct(formData) {
   console.log(priseNew);
   console.log(img_url);
 
-  if (typeof priseNew === "number") {
-    console.log('Змінна priseNew має тип "number".');
-  } else {
-    console.log("Змінна priseNew не є числовою.");
-  }
+  // if (typeof priseNew === "number") {
+  //   console.log('Змінна priseNew має тип "number".');
+  // } else {
+  //   console.log("Змінна priseNew не є числовою.");
+  // }
 
   try {
     await sql`
-          INSERT INTO public.catalog_list (make, prise, img_url)
-          VALUES (${make}, ${priseNew}, ${img_url}) 
+          INSERT INTO public.catalog_list (id, make, prise, img_url)
+          VALUES (DEFAULT, ${make}, ${priseNew}, ${img_url}) 
         `;
-    return {
-      message: "Create new product.",
-    };
+    revalidatePath("/catalog");
+
+    return { message: "Create new product." };
   } catch (error) {
-    return {
-      message: "Database Error: Failed to Create product.",
-    };
+    return { message: "Database Error: Failed to Create product." };
   }
+
+  redirect("/catalog");
 }
 
 export async function fetchProductById(id) {
