@@ -1,3 +1,5 @@
+"use server";
+
 import { sql } from "@vercel/postgres";
 // import { z } from "zod";
 
@@ -9,15 +11,21 @@ export async function createProduct(formData) {
   };
 
   const { make, prise, img_url } = rawFormData;
+  const priseNew = Number(prise);
   console.log(make);
-  console.log(prise);
+  console.log(priseNew);
   console.log(img_url);
+
+  if (typeof priseNew === "number") {
+    console.log('Змінна priseNew має тип "number".');
+  } else {
+    console.log("Змінна priseNew не є числовою.");
+  }
 
   try {
     await sql`
           INSERT INTO public.catalog_list (make, prise, img_url)
-          VALUES (${make}, ${prise}, ${img_url})
-          returning id
+          VALUES (${make}, ${priseNew}, ${img_url}) 
         `;
     return {
       message: "Create new product.",

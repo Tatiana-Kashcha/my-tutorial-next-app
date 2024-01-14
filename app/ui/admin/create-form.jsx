@@ -9,7 +9,7 @@ export default function CreateForm({ myPreset }) {
   const { pending } = useFormStatus();
   const [secureUrl, setSecureUrl] = useState("");
   const [originalFilename, setOriginalFilename] = useState("");
-  console.log(secureUrl);
+  // console.log(secureUrl);
 
   return (
     <div className="relative">
