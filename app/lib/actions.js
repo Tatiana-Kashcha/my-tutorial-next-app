@@ -46,13 +46,27 @@ export async function fetchProductById(id) {
       img_url
       FROM 
       public.catalog_list
-      WHERE id IN (${id});`;
+      WHERE id IN (${id})`;
 
     const result = data.rows;
     // console.log(result);
     return result;
-  } catch (err) {
-    console.error("Database Error:", err);
+  } catch (error) {
+    console.error("Database Error:", error);
     throw new Error("Failed to fetch product.");
+  }
+}
+
+export async function deleteProduct(id) {
+  try {
+    await sql`DELETE FROM 
+    public.catalog_list
+    WHERE id IN (${id})`;
+    
+    revalidatePath("/catalog");
+    return { message: "Deleted Product." };
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to delete product.");
   }
 }
