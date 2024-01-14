@@ -29,7 +29,7 @@ export default function CreateForm({ myPreset }) {
               />
             </div>
           </div>
-          {/* <div className="mb-4">
+          <div className="mb-4">
             <label htmlFor="price" className="mb-2 block text-sm font-medium">
               Product price
             </label>
@@ -43,7 +43,7 @@ export default function CreateForm({ myPreset }) {
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-5 text-sm outline-2 placeholder:text-gray-500"
               />
             </div>
-          </div> */}
+          </div>
 
           {/* <div className="mb-4">
             <p className="mb-2 block text-sm font-medium">Product image</p>
