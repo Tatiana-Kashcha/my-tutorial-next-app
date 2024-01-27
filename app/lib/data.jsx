@@ -9,7 +9,7 @@ export async function fetchCatalog() {
       SELECT make,
       id,
        prise,
-       img_url
+       img_url1
 FROM catalog_list;`;
 
     const fetchCatalog = data.rows;

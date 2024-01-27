@@ -7,7 +7,7 @@ import { createProduct } from "../../lib/actions";
 
 export default function CreateForm({ myPreset }) {
   const { pending } = useFormStatus();
-  const [secureUrl, setSecureUrl] = useState("");
+  const [secureUrl1, setSecureUrl1] = useState("");
   const [originalFilename, setOriginalFilename] = useState("");
   // console.log(secureUrl);
 
@@ -47,11 +47,11 @@ export default function CreateForm({ myPreset }) {
 
           <div className="mb-4">
             <p className="mb-2 block text-sm font-medium">Product image</p>
-            {secureUrl && (
+            {secureUrl1 && (
               <>
                 <div className="mb-2 flex items-center justify-center overflow-hidden w-[100px] h-[100px] border border-gray-200 ">
                   <img
-                    src={secureUrl}
+                    src={secureUrl1}
                     alt="Product image"
                     className="block object-cover h-full object-center"
                   />
@@ -68,7 +68,7 @@ export default function CreateForm({ myPreset }) {
                     id="image"
                     name="image"
                     type="text"
-                    defaultValue={secureUrl}
+                    defaultValue={secureUrl1}
                     className="peer block w-full rounded-md border border-gray-200 py-2 pl-5 text-sm outline-2 placeholder:text-gray-500"
                   />
                 </div>
@@ -89,7 +89,7 @@ export default function CreateForm({ myPreset }) {
         uploadPreset={myPreset}
         options={{ folder: "my-test" }}
         onSuccess={(results) => {
-          setSecureUrl(results.info.secure_url);
+          setSecureUrl1(results.info.secure_url);
           setOriginalFilename(results.info.original_filename);
         }}
       >

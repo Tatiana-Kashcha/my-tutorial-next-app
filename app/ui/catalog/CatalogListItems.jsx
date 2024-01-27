@@ -12,7 +12,7 @@ export const CatalogListItems = ({ car }) => {
     <div>
       <div className="mb-2 relative flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 ">
         <Image
-          src={car.img_url ? car.img_url : "/images/noImageIcon.jpg"}
+          src={car.img_url1 ? car.img_url1 : "/images/noImageIcon.jpg"}
           alt="Car"
           className="block object-cover h-full object-center"
           width={274}

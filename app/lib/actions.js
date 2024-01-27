@@ -9,10 +9,10 @@ export async function createProduct(formData) {
   const rawFormData = {
     make: formData.get("name"),
     prise: formData.get("price"),
-    img_url: formData.get("image"),
+    img_url1: formData.get("image"),
   };
 
-  const { make, prise, img_url } = rawFormData;
+  const { make, prise, img_url1 } = rawFormData;
   const priseNew = Number(prise);
   // console.log(make);
   // console.log(priseNew);
@@ -26,8 +26,8 @@ export async function createProduct(formData) {
 
   try {
     await sql`
-          INSERT INTO public.catalog_list (id, make, prise, img_url)
-          VALUES (DEFAULT, ${make}, ${priseNew}, ${img_url})
+          INSERT INTO public.catalog_list (id, make, prise, img_url1)
+          VALUES (DEFAULT, ${make}, ${priseNew}, ${img_url1})
         `;
     revalidatePath("/catalog");
 
@@ -43,7 +43,7 @@ export async function fetchProductById(id) {
       SELECT make,
       id,
       prise,
-      img_url,
+      img_url1,
       img_url2,
       img_url3,
       img_url4

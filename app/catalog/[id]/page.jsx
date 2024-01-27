@@ -22,7 +22,7 @@ export default async function ProductIdPage({ params }) {
         Product Id Page {id} {new Date().toTimeString()}
       </h2>
       <Link href="/catalog">
-        <button className="inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-blue-600 hover:bg-blue-500">
+        <button className="mb-4 inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-blue-600 hover:bg-blue-500">
           Back to catalog
         </button>
       </Link>

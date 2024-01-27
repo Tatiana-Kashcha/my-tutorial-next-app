@@ -2,7 +2,7 @@
 import Image from "next/image";
 
 export const CardProductById = ({ data }) => {
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="flex items-center justify-center">
@@ -12,13 +12,15 @@ export const CardProductById = ({ data }) => {
             <div className="relative flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 ">
               <Image
                 src={
-                  product.img_url ? product.img_url : "/images/noImageIcon.jpg"
+                  product.img_url1
+                    ? product.img_url1
+                    : "/images/noImageIcon.jpg"
                 }
                 alt="Car"
                 className="block object-cover h-full object-center"
                 width={274}
                 height={254}
-                priority
+                // priority
               />
             </div>
             <div className="relative flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 ">
@@ -32,7 +34,7 @@ export const CardProductById = ({ data }) => {
                 className="block object-cover h-full object-center"
                 width={274}
                 height={254}
-                priority
+                // priority
               />
             </div>
             <div className="relative flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 ">
@@ -46,7 +48,7 @@ export const CardProductById = ({ data }) => {
                 className="block object-cover h-full object-center"
                 width={274}
                 height={254}
-                priority
+                // priority
               />
             </div>
             <div className="relative flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 ">
@@ -60,7 +62,7 @@ export const CardProductById = ({ data }) => {
                 className="block object-cover h-full object-center"
                 width={274}
                 height={254}
-                priority
+                // priority
               />
             </div>
           </div>
