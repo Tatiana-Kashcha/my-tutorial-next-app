@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { fetchProductById } from "../../lib/actions";
 import { CardProductById } from "../../ui/catalog/CardProductById";
 
@@ -17,7 +18,14 @@ export default async function ProductIdPage({ params }) {
 
   return (
     <>
-      <h2 className="mb-4">Product Id Page {id}</h2>
+      <h2 className="mb-4">
+        Product Id Page {id} {new Date().toTimeString()}
+      </h2>
+      <Link href="/catalog">
+        <button className="inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-blue-600 hover:bg-blue-500">
+          Back to catalog
+        </button>
+      </Link>
       <CardProductById data={productById} />
     </>
   );

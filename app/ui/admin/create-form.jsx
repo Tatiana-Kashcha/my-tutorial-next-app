@@ -49,7 +49,7 @@ export default function CreateForm({ myPreset }) {
             <p className="mb-2 block text-sm font-medium">Product image</p>
             {secureUrl && (
               <>
-                <div className="mb-2 flex items-center justify-center overflow-hidden block w-[100px] h-[100px] border border-gray-200 ">
+                <div className="mb-2 flex items-center justify-center overflow-hidden w-[100px] h-[100px] border border-gray-200 ">
                   <img
                     src={secureUrl}
                     alt="Product image"

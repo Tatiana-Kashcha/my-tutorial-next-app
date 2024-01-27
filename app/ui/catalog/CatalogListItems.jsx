@@ -10,7 +10,7 @@ export const CatalogListItems = ({ car }) => {
   const deleteProductWithId = deleteProduct.bind(null, car.id);
   return (
     <div>
-      <div className="mb-2 relative flex items-center justify-center overflow-hidden block w-[274px] h-[254px] border border-gray-200 ">
+      <div className="mb-2 relative flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 ">
         <Image
           src={car.img_url ? car.img_url : "/images/noImageIcon.jpg"}
           alt="Car"

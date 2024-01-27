@@ -19,7 +19,7 @@ export default async function CatalogPage() {
         width={100}
         height={40}
       />
-      <h2 className="mb-4">Catalog Page</h2>
+      <h2 className="mb-4">Catalog Page {new Date().toTimeString()}</h2>
 
       <CatalogList data={CardsCatalog} />
     </div>

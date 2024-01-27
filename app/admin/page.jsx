@@ -11,7 +11,7 @@ const myPreset = process.env.CLOUDINARY_UPLOAD_PRESET;
 export default function Page() {
   return (
     <>
-      <p>Admin Page</p>
+      <p>Admin Page {new Date().toTimeString()}</p>
       <CreateForm myPreset={myPreset} />
       {/* <Wiget myPreset={myPreset} />
       <Wiget myPreset={myPreset} />
