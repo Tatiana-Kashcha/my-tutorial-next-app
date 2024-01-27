@@ -9,7 +9,8 @@ export default function CreateForm({ myPreset }) {
   const { pending } = useFormStatus();
   const [secureUrl1, setSecureUrl1] = useState("");
   const [originalFilename, setOriginalFilename] = useState("");
-  // console.log(secureUrl);
+  const [res, setRes] = useState("");
+  console.log(res);
 
   return (
     <div className="relative">
@@ -58,15 +59,15 @@ export default function CreateForm({ myPreset }) {
                 </div>
 
                 <label
-                  htmlFor="image"
+                  htmlFor="image1"
                   className="mb-2 block text-sm font-medium"
                 >
                   Image url selected file - &quot;{originalFilename}&quot;
                 </label>
                 <div className="relative mt-2 rounded-md">
                   <input
-                    id="image"
-                    name="image"
+                    id="image1"
+                    name="image1"
                     type="text"
                     defaultValue={secureUrl1}
                     className="peer block w-full rounded-md border border-gray-200 py-2 pl-5 text-sm outline-2 placeholder:text-gray-500"
@@ -91,6 +92,7 @@ export default function CreateForm({ myPreset }) {
         onSuccess={(results) => {
           setSecureUrl1(results.info.secure_url);
           setOriginalFilename(results.info.original_filename);
+          setRes(results.info.asset_id);
         }}
       >
         {({ open }) => {

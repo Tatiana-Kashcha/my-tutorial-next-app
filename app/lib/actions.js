@@ -9,7 +9,7 @@ export async function createProduct(formData) {
   const rawFormData = {
     make: formData.get("name"),
     prise: formData.get("price"),
-    img_url1: formData.get("image"),
+    img_url1: formData.get("image1"),
   };
 
   const { make, prise, img_url1 } = rawFormData;
