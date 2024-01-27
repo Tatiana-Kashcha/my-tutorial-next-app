@@ -43,7 +43,10 @@ export async function fetchProductById(id) {
       SELECT make,
       id,
       prise,
-      img_url
+      img_url,
+      img_url2,
+      img_url3,
+      img_url4
       FROM
       public.catalog_list
       WHERE id IN (${id})`;

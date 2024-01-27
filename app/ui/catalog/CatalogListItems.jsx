@@ -17,7 +17,6 @@ export const CatalogListItems = ({ car }) => {
           className="block object-cover h-full object-center"
           width={274}
           height={254}
-          //   priority
         />
       </div>
       <p className="mb-2">Model: {car.make}</p>
