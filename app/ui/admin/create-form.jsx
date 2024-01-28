@@ -222,7 +222,7 @@ export default function CreateForm({ myPreset }) {
           return (
             <button
               onClick={() => open()}
-              className="mr-2 inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-slate-600 hover:bg-slate-500"
+              className="mr-2 mb-4 inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-slate-600 hover:bg-slate-500"
             >
               Upload Image 1
             </button>
@@ -243,7 +243,7 @@ export default function CreateForm({ myPreset }) {
           return (
             <button
               onClick={() => open()}
-              className="mr-2 inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-slate-600 hover:bg-slate-500"
+              className="mr-2 mb-4 inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-slate-600 hover:bg-slate-500"
             >
               Upload Image 2
             </button>
@@ -264,7 +264,7 @@ export default function CreateForm({ myPreset }) {
           return (
             <button
               onClick={() => open()}
-              className="mr-2 inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-slate-600 hover:bg-slate-500"
+              className="mr-2 mb-4 inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-slate-600 hover:bg-slate-500"
             >
               Upload Image 3
             </button>
@@ -285,7 +285,7 @@ export default function CreateForm({ myPreset }) {
           return (
             <button
               onClick={() => open()}
-              className="mr-2 inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-slate-600 hover:bg-slate-500"
+              className="mr-2 mb-4 inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-slate-600 hover:bg-slate-500"
             >
               Upload Image 4
             </button>
