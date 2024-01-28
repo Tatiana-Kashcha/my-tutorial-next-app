@@ -8,7 +8,7 @@ export const CardProductById = ({ data }) => {
     <div className="flex items-center justify-center">
       {data.map((product) => (
         <div key={product.id}>
-          <div className="mb-4 flex flex-wrap gap-5  p-0 ">
+          <div className="mb-4 flex flex-wrap gap-5 p-0 ">
             <div className="relative flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 ">
               <Image
                 src={
