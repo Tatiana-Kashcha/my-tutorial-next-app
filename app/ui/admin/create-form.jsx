@@ -46,25 +46,31 @@ export default function CreateForm({ myPreset }) {
             </div>
           </div>
 
-          <div className="mb-4">
-            <p className="mb-2 block text-sm font-medium">Product image</p>
+          <div className="mb-4 flex">
             {secureUrl1 && (
               <>
-                <div className="mb-2 flex items-center justify-center overflow-hidden w-[100px] h-[100px] border border-gray-200 ">
-                  <img
-                    src={secureUrl1}
-                    alt="Product image"
-                    className="block object-cover h-full object-center"
-                  />
+                <div className="mr-4">
+                  <p className="mb-2 block text-sm font-medium">
+                    Product image 1
+                  </p>
+                  <div className="mb-2 flex items-center justify-center overflow-hidden w-[130px] h-[130px] border border-gray-200 ">
+                    <img
+                      src={secureUrl1}
+                      alt="Product image"
+                      className="block object-cover h-full object-center"
+                    />
+                  </div>
                 </div>
+                <div className="w-full">
+                  <label
+                    htmlFor="image1"
+                    className="mb-2 block text-sm font-medium"
+                  >
+                    The image URL for the selected file - &quot;
+                    {originalFilename}
+                    &quot;
+                  </label>
 
-                <label
-                  htmlFor="image1"
-                  className="mb-2 block text-sm font-medium"
-                >
-                  Image url selected file - &quot;{originalFilename}&quot;
-                </label>
-                <div className="relative mt-2 rounded-md">
                   <input
                     id="image1"
                     name="image1"
@@ -82,7 +88,7 @@ export default function CreateForm({ myPreset }) {
           aria-disabled={pending}
           className="mb-4 inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-green-600 hover:bg-green-500"
         >
-          Create
+          Create product
         </button>
       </form>
 
