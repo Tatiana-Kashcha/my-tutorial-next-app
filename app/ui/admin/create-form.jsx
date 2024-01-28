@@ -80,7 +80,7 @@ export default function CreateForm({ myPreset }) {
         <button
           type="submit"
           aria-disabled={pending}
-          className="inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-green-600 hover:bg-green-500"
+          className="mb-4 inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-green-600 hover:bg-green-500"
         >
           Create
         </button>
@@ -99,7 +99,7 @@ export default function CreateForm({ myPreset }) {
           return (
             <button
               onClick={() => open()}
-              className="absolute left-28 top-40 inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-slate-600 hover:bg-slate-500"
+              className="inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-slate-600 hover:bg-slate-500"
             >
               Upload Image
             </button>
