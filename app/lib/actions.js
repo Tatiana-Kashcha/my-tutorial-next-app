@@ -3,7 +3,7 @@
 import { sql } from "@vercel/postgres";
 // import { z } from "zod";
 import { revalidatePath } from "next/cache";
-// import { redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 
 export async function createProduct(formData) {
   const rawFormData = {
@@ -32,12 +32,15 @@ export async function createProduct(formData) {
           INSERT INTO public.catalog_list (id, make, prise, img_url1, img_url2, img_url3, img_url4)
           VALUES (DEFAULT, ${make}, ${priseNew}, ${img_url1}, ${img_url2}, ${img_url3}, ${img_url4})
         `;
-    revalidatePath("/catalog");
+    // revalidatePath("/catalog");
 
-    return { message: "Create new product." };
+    // return { message: "Create new product." };
   } catch (error) {
-    return { message: "Database Error: Failed to Create product." };
+    console.error("Database Error:", error);
+    throw new Error("Failed to create product.");
   }
+  revalidatePath("/catalog");
+  redirect("/catalog");
 }
 
 export async function fetchProductById(id) {
