@@ -10,7 +10,7 @@ export async function fetchCatalog() {
       id,
        prise,
        img_url1
-FROM catalog_list;`;
+FROM public.catalog_list;`;
 
     const fetchCatalog = data.rows;
     return fetchCatalog;
@@ -19,3 +19,20 @@ FROM catalog_list;`;
     throw new Error("Failed to fetch all fetchCatalog.");
   }
 }
+
+// export async function fetchCatalog() {
+//   try {
+//     const data = await sql`
+//       SELECT make,
+//       id,
+//        prise,
+//        img_url1
+// FROM mytest.catalog_list;`;
+
+//     const fetchCatalog = data.rows;
+//     return fetchCatalog;
+//   } catch (err) {
+//     console.error("Database Error:", err);
+//     throw new Error("Failed to fetch all fetchCatalog.");
+//   }
+// }
