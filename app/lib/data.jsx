@@ -20,19 +20,3 @@ FROM public.catalog_list;`;
   }
 }
 
-// export async function fetchCatalog() {
-//   try {
-//     const data = await sql`
-//       SELECT make,
-//       id,
-//        prise,
-//        img_url1
-// FROM mytest.catalog_list;`;
-
-//     const fetchCatalog = data.rows;
-//     return fetchCatalog;
-//   } catch (err) {
-//     console.error("Database Error:", err);
-//     throw new Error("Failed to fetch all fetchCatalog.");
-//   }
-// }
