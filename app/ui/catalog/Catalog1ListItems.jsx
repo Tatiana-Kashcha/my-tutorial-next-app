@@ -12,7 +12,10 @@ export const Catalog1ListItems = ({ product }) => {
 
       <div className="mb-4 flex flex-wrap gap-5">
         {product.img_url.map((url) => (
-          <div className="flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 ">
+          <div
+            key={url}
+            className="flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 "
+          >
             <Image
               src={url ? url : "/images/noImageIcon.jpg"}
               alt="Product"
