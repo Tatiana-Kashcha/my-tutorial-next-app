@@ -7,12 +7,12 @@ export const metadata = {
 };
 
 export default async function HomePage() {
-  const DataCatalog1 = await fetchCatalog1();
+  const dataCatalog1 = await fetchCatalog1();
 
   return (
     <div className="flex flex-col ">
       <h2 className="mb-4">Home Page</h2>
-      <Catalog1List data={DataCatalog1} />
+      <Catalog1List data={dataCatalog1} />
     </div>
   );
 }
