@@ -10,7 +10,7 @@ export const Catalog1List = ({ data }) => {
         {data.map((product) => (
           <li
             key={product.id}
-            className="mb-3 rounded-lg bg-center bg-cover bg-no-repeat object-cover cursor-pointer"
+            className="rounded-lg bg-center bg-cover bg-no-repeat object-cover cursor-pointer"
           >
             <Catalog1ListItems product={product} />
           </li>

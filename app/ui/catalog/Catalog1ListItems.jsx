@@ -10,35 +10,36 @@ export const Catalog1ListItems = ({ product }) => {
       </p>
       <p className="mb-2">Kod: {product.code}</p>
       <p className="mb-2">Producent: {product.brand_title}</p>
-
-      {product.img_url ? (
-        <div className="mb-4 flex flex-wrap gap-5">
-          {product.img_url.map((url) => (
-            <div
-              key={url}
-              className="flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 "
-            >
-              <Image
-                src={url}
-                alt="Product"
-                className="block object-cover h-full object-center"
-                width={274}
-                height={254}
-              />
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div className="mb-4 flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 ">
-          <Image
-            src={"/images/noImageIcon.jpg"}
-            alt="Product"
-            className="block object-cover h-full object-center"
-            width={274}
-            height={254}
-          />
-        </div>
-      )}
+      <div className="flex flex-wrap gap-5">
+        {product.img_url ? (
+          <div className="flex flex-wrap gap-5">
+            {product.img_url.map((url) => (
+              <div
+                key={url}
+                className="flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 "
+              >
+                <Image
+                  src={url}
+                  alt="Product"
+                  className="block object-cover h-full object-center"
+                  width={274}
+                  height={254}
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 ">
+            <Image
+              src={"/images/noImageIcon.jpg"}
+              alt="Product"
+              className="block object-cover h-full object-center"
+              width={274}
+              height={254}
+            />
+          </div>
+        )}
+      </div>
     </>
   );
 };
