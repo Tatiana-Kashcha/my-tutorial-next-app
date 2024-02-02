@@ -9,6 +9,7 @@ export const Catalog1ListItems = ({ product }) => {
         {(product.prise / 100).toFixed(2).replace(".", ",")}zł
       </p>
       <p className="mb-2">Kod: {product.code}</p>
+      <p className="mb-2">Producent: {product.brand_title}</p>
 
       {product.img_url ? (
         <div className="mb-4 flex flex-wrap gap-5">
