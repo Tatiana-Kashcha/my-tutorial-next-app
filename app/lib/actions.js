@@ -88,7 +88,8 @@ export async function fetchCategory() {
     const data = await sql`
       SELECT
       id, title, img_url
-      FROM mytest.category`;
+      FROM mytest.category
+      ORDER BY id ASC `;
 
     const fetchCategory = data.rows;
     return fetchCategory;
