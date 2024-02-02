@@ -4,6 +4,7 @@ import Image from "next/image";
 export const Catalog1ListItems = ({ product }) => {
   return (
     <>
+      <p className="mb-2">id: {product.id}</p>
       <p className="mb-2">{product.make}</p>
       <p className="mb-2">
         {(product.prise / 100).toFixed(2).replace(".", ",")}zł
@@ -13,7 +14,7 @@ export const Catalog1ListItems = ({ product }) => {
       <p className="mb-2">Rodzaj: {product.subcat_1_title}</p>
       <p className="mb-2">Odcień: {product.color_title}</p>
       <p className="mb-2">Opakowanie: {product.pack_title}</p>
-      <p className="mb-2">id: {product.id}</p>
+      <p className="mb-2">Ilość w sklepie: {product.quantity}</p>
 
       <div className="flex flex-wrap gap-5">
         {product.img_url ? (
