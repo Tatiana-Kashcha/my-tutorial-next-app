@@ -10,6 +10,7 @@ export const Catalog1ListItems = ({ product }) => {
       </p>
       <p className="mb-2">Kod: {product.code}</p>
       <p className="mb-2">Producent: {product.brand_title}</p>
+
       <div className="flex flex-wrap gap-5">
         {product.img_url ? (
           <div className="flex flex-wrap gap-5">
