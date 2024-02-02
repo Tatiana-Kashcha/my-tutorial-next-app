@@ -81,6 +81,23 @@ export async function deleteProduct(id) {
   }
 }
 
+/////////////////////////////////////////////////////////////
+
+export async function fetchCategory() {
+  try {
+    const data = await sql`
+      SELECT
+      id, title, img_url
+      FROM mytest.category`;
+
+    const fetchCategory = data.rows;
+    return fetchCategory;
+  } catch (err) {
+    console.error("Database Error:", err);
+    throw new Error("Failed to fetch data.");
+  }
+}
+
 export async function fetchCatalog1() {
   try {
     const data = await sql`
@@ -112,6 +129,6 @@ export async function fetchCatalog1() {
     return fetchCatalog;
   } catch (err) {
     console.error("Database Error:", err);
-    throw new Error("Failed to fetch all fetchCatalog.");
+    throw new Error("Failed to fetch data.");
   }
 }
