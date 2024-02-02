@@ -10,6 +10,10 @@ export const Catalog1ListItems = ({ product }) => {
       </p>
       <p className="mb-2">Kod: {product.code}</p>
       <p className="mb-2">Producent: {product.brand_title}</p>
+      <p className="mb-2">Rodzaj: {product.subcat_1_title}</p>
+      <p className="mb-2">Odcień: {product.color_title}</p>
+      <p className="mb-2">Opakowanie: {product.pack_title}</p>
+      <p className="mb-2">id: {product.id}</p>
 
       <div className="flex flex-wrap gap-5">
         {product.img_url ? (
