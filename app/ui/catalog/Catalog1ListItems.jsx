@@ -5,6 +5,7 @@ export const Catalog1ListItems = ({ product }) => {
   return (
     <>
       <p className="mb-2">id: {product.id}</p>
+      <p className="mb-2">{product.category_title}</p>
       <p className="mb-2">{product.make}</p>
       <p className="mb-2">
         {(product.prise / 100).toFixed(2).replace(".", ",")}zł
