@@ -5,7 +5,6 @@ import { CardProductById } from "../../ui/catalog/CardProductById";
 export default async function ProductIdPage({ params }) {
   const id = Number(params.id);
   //   const id = params.id; //і так теж працює ??
-  //   console.log(id);
 
   const productById = await fetchProductById(id);
   //   console.log(productById);

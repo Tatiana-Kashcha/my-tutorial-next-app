@@ -10,7 +10,7 @@ export const metadata = {
 export default async function HomePage() {
   const dataCategory = await fetchCategory();
   const dataCatalog1 = await fetchCatalog1();
-  const dataCatalogById = await fetchCatalogById(2);
+  const dataCatalogById = await fetchCatalogById(1);
 
   return (
     <div className="flex flex-col ">

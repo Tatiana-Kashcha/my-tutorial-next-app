@@ -89,6 +89,7 @@ export async function fetchCategory() {
       SELECT
       id, title, img_url
       FROM mytest.category
+      WHERE parent_id IS NULL
       ORDER BY id ASC `;
 
     const fetchCategory = data.rows;
