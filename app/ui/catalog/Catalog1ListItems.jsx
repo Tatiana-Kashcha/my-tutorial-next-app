@@ -5,14 +5,13 @@ export const Catalog1ListItems = ({ product }) => {
   return (
     <>
       <p className="mb-2">id: {product.id}</p>
-      <p className="mb-2">{product.category_title}</p>
       <p className="mb-2">{product.make}</p>
       <p className="mb-2">
         {(product.prise / 100).toFixed(2).replace(".", ",")}zł
       </p>
       <p className="mb-2">Kod: {product.code}</p>
       <p className="mb-2">Producent: {product.brand_title}</p>
-      <p className="mb-2">Rodzaj: {product.subcat_1_title}</p>
+      <p className="mb-2">Rodzaj: {product.category_title}</p>
       <p className="mb-2">Odcień: {product.color_title}</p>
       <p className="mb-2">Opakowanie: {product.pack_title}</p>
       <p className="mb-2">Ilość w sklepie: {product.quantity}</p>

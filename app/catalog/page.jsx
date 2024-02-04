@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { fetchCatalog } from "../lib/data";
+import { fetchCarCatalog } from "../lib/data";
 
 import { CatalogList } from "../ui/catalog/CatalogList";
 
@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 export default async function CatalogPage() {
-  const CardsCatalog = await fetchCatalog();
+  const CardsCatalog = await fetchCarCatalog();
 
   return (
     <div className="flex flex-col ">

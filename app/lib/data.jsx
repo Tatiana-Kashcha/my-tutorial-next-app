@@ -3,7 +3,7 @@ import { sql } from "@vercel/postgres";
 // const likes = 100;
 // const { data } = await sql`SELECT * FROM posts WHERE prise > ${prise} LIMIT 5;`;
 
-export async function fetchCatalog() {
+export async function fetchCarCatalog() {
   try {
     const data = await sql`
       SELECT make,
@@ -19,4 +19,3 @@ FROM public.catalog_list;`;
     throw new Error("Failed to fetch all fetchCatalog.");
   }
 }
-

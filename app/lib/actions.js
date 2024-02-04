@@ -100,13 +100,12 @@ export async function fetchCategory() {
   }
 }
 
-export async function fetchCatalog1() {
+export async function fetchCatalog() {
   try {
     const data = await sql`
     SELECT 
     cat.id, cat.make, cat.prise, cat.code,
     category.title as category_title,
-    subcat_1.title as subcat_1_title,
     brand.title as brand_title,
     country.title as country_title,
     popular.title as popular_title,
@@ -115,9 +114,8 @@ export async function fetchCatalog1() {
     reality.title as reality_title,
     pack.title as pack_title,
     cat.quantity, cat.img_url
-    FROM mytest.catalog_1 cat
+    FROM mytest.catalog cat
     LEFT JOIN mytest.category category ON category.id = cat.category_id
-    LEFT JOIN mytest.subcategory_1 subcat_1 ON subcat_1.id = cat.subcategory_1_id
     LEFT JOIN mytest.brand brand ON brand.id = cat.brand_id
     LEFT JOIN mytest.country country ON country.id = cat.country_id
     LEFT JOIN mytest.popular popular ON popular.id = cat.popular_id
@@ -125,42 +123,6 @@ export async function fetchCatalog1() {
     LEFT JOIN mytest.capacity capacity ON capacity.id = cat.capacity_id
     LEFT JOIN mytest.reality reality ON reality.id = cat.reality_id
     LEFT JOIN mytest.pack pack ON pack.id = cat.pack_id
-    ORDER BY id ASC`;
-
-    const fetchCatalog = data.rows;
-    return fetchCatalog;
-  } catch (err) {
-    console.error("Database Error:", err);
-    throw new Error("Failed to fetch data.");
-  }
-}
-
-export async function fetchCatalogById(id) {
-  try {
-    const data = await sql`
-    SELECT 
-    cat.id, cat.make, cat.prise, cat.code,
-    category.title as category_title,
-    subcat_1.title as subcat_1_title,
-    brand.title as brand_title,
-    country.title as country_title,
-    popular.title as popular_title,
-    color.title as color_title,
-    capacity.volume as capacity_volume,
-    reality.title as reality_title,
-    pack.title as pack_title,
-    cat.quantity, cat.img_url
-    FROM mytest.catalog_1 cat
-    LEFT JOIN mytest.category category ON category.id = cat.category_id
-    LEFT JOIN mytest.subcategory_1 subcat_1 ON subcat_1.id = cat.subcategory_1_id
-    LEFT JOIN mytest.brand brand ON brand.id = cat.brand_id
-    LEFT JOIN mytest.country country ON country.id = cat.country_id
-    LEFT JOIN mytest.popular popular ON popular.id = cat.popular_id
-    LEFT JOIN mytest.color color ON color.id = cat.color_id
-    LEFT JOIN mytest.capacity capacity ON capacity.id = cat.capacity_id
-    LEFT JOIN mytest.reality reality ON reality.id = cat.reality_id
-    LEFT JOIN mytest.pack pack ON pack.id = cat.pack_id
-    WHERE cat.category_id IN (${id})
     ORDER BY id ASC`;
 
     const fetchCatalog = data.rows;
