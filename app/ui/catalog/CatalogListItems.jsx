@@ -1,39 +1,51 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
-import { deleteProduct } from "../../lib/actions";
 
-export const CatalogListItems = ({ car }) => {
-  //   const url = car.img_url;
-  //   console.log(url);
-  //   console.log(car);
-  const deleteProductWithId = deleteProduct.bind(null, car.id);
+export const CatalogListItems = ({ product }) => {
   return (
-    <div>
-      <div className="mb-2 relative flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 ">
-        <Image
-          src={car.img_url1 ? car.img_url1 : "/images/noImageIcon.jpg"}
-          alt="Car"
-          className="block object-cover h-full object-center"
-          width={274}
-          height={254}
-        />
-      </div>
-      <p className="mb-2">Model: {car.make}</p>
-      <p className="mb-2">Price $: {car.prise}</p>
+    <>
+      <p className="mb-2">id: {product.id}</p>
+      <p className="mb-2">{product.make}</p>
+      <p className="mb-2">
+        {(product.prise / 100).toFixed(2).replace(".", ",")}zł
+      </p>
+      <p className="mb-2">Kod: {product.code}</p>
+      <p className="mb-2">Producent: {product.brand_title}</p>
+      <p className="mb-2">Rodzaj: {product.category_title}</p>
+      <p className="mb-2">Odcień: {product.color_title}</p>
+      <p className="mb-2">Opakowanie: {product.pack_title}</p>
+      <p className="mb-2">Ilość w sklepie: {product.quantity}</p>
 
-      <div className="flex">
-        <Link href={`/catalog/${car.id}`}>
-          <button className="inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-green-600 hover:bg-green-500">
-            View
-          </button>
-        </Link>
-        <form action={deleteProductWithId}>
-          <button className="ml-2 inline-block py-2 px-4 rounded-full font-semibold uppercase text-white bg-red-600 hover:bg-red-500">
-            Delete
-          </button>
-        </form>
+      <div className="flex flex-wrap gap-5">
+        {product.img_url ? (
+          <div className="flex flex-wrap gap-5">
+            {product.img_url.map((url) => (
+              <div
+                key={url}
+                className="flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 "
+              >
+                <Image
+                  src={url}
+                  alt="Product"
+                  className="block object-cover h-full object-center"
+                  width={274}
+                  height={254}
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 ">
+            <Image
+              src={"/images/noImageIcon.jpg"}
+              alt="Product"
+              className="block object-cover h-full object-center"
+              width={274}
+              height={254}
+            />
+          </div>
+        )}
       </div>
-    </div>
+    </>
   );
 };

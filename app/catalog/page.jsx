@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { fetchCarCatalog } from "../lib/data";
 
-import { CatalogList } from "../ui/catalog/CatalogList";
+import { CatalogCarList } from "../ui/catalog/CatalogCarList";
 
 export const metadata = {
   title: "Catalog",
@@ -21,7 +21,7 @@ export default async function CatalogPage() {
       />
       <h2 className="mb-4">Catalog Page {new Date().toTimeString()}</h2>
 
-      <CatalogList data={CardsCatalog} />
+      <CatalogCarList data={CardsCatalog} />
     </div>
   );
 }
