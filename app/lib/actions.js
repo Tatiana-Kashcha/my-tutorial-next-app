@@ -104,7 +104,7 @@ export async function fetchCatalog() {
   try {
     const data = await sql`
     SELECT 
-    cat.id, cat.make, cat.prise, cat.code,
+    cat.id, cat.make, cat.price, cat.discount, cat.code,
     category.title as category_title,
     brand.title as brand_title,
     country.title as country_title,
@@ -123,7 +123,7 @@ export async function fetchCatalog() {
     LEFT JOIN mytest.capacity capacity ON capacity.id = cat.capacity_id
     LEFT JOIN mytest.reality reality ON reality.id = cat.reality_id
     LEFT JOIN mytest.pack pack ON pack.id = cat.pack_id
-    ORDER BY id ASC`;
+    ORDER BY price DESC`;
 
     const fetchCatalog = data.rows;
     return fetchCatalog;
