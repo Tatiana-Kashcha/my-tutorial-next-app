@@ -10,10 +10,10 @@ export const CategoryListSklep = ({ data }) => {
         {data.map((category) => (
           <li key={category.id} className="cursor-pointer">
             <Link
-              href={category.title
+              href={`/${category.title
                 .toLowerCase()
                 .replace(",", "")
-                .replaceAll(" ", "-")}
+                .replaceAll(" ", "-")}`}
             >
               <CategoryListItems data={category} />
             </Link>
