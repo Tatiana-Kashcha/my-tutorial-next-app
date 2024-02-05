@@ -16,13 +16,16 @@ export const CatalogListItems = ({ product }) => {
       <p className="mb-2">Price: {price.toFixed(2).replace(".", ",")}zł</p>
       <p className="mb-2">Discount: -{product.discount}%</p>
       <p className="mb-2">
-        Amount: {discountAmount.toFixed(2).replace(".", ",")}zł
+        DiscountAmount: {discountAmount.toFixed(2).replace(".", ",")}zł --
+        {discountAmount}zł
       </p>
       <p className="mb-2">
-        DiscountedPrice: {discountedPrice.toFixed(2).replace(".", ",")}zł
+        DiscountedPrice: {discountedPrice.toFixed(2).replace(".", ",")}zł --
+        {discountedPrice}zł
       </p>
       <p className="mb-2">
-        DiscountedPrice * 3: {newPrice.toFixed(2).replace(".", ",")}zł
+        DiscountedPrice * 3: {newPrice.toFixed(2).replace(".", ",")}zł --
+        {newPrice}zł
       </p>
       <p className="mb-2">Kod: {product.code}</p>
       <p className="mb-2">Producent: {product.brand_title}</p>
