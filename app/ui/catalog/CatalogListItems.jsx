@@ -21,6 +21,9 @@ export const CatalogListItems = ({ product }) => {
       <p className="mb-2">
         DiscountedPrice: {discountedPrice.toFixed(2).replace(".", ",")}zł
       </p>
+      <p className="mb-2">
+        DiscountedPrice * 3: {newPrice.toFixed(2).replace(".", ",")}zł
+      </p>
       <p className="mb-2">Kod: {product.code}</p>
       <p className="mb-2">Producent: {product.brand_title}</p>
       <p className="mb-2">Rodzaj: {product.category_title}</p>
