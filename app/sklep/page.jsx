@@ -1,4 +1,4 @@
-import { CategoryListSklep } from "../ui/CategoryListSklep";
+import { CategoryListShop } from "../ui/CategoryListShop";
 import { fetchCategory } from "../lib/actions";
 
 export const metadata = {
@@ -14,9 +14,11 @@ export default async function SklepPage() {
       <div>Sklep Page</div>
       <div>BLOCK OF CATEGORY LINKS</div>
 
-      <div className="mb-[100px] w-[1224px]">
-        <CategoryListSklep data={dataCategory} style="flex-wrap" />
-      </div>
+      <CategoryListShop data={dataCategory} />
+
+      {/* <div className="mb-[100px] w-[1224px]">
+        <CategoryListShop data={dataCategory} stylization="flex flex-wrap" />
+      </div> */}
     </>
   );
 }

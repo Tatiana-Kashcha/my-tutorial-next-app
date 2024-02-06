@@ -1,9 +1,9 @@
 "use client";
 
-// import { CategoryListItems } from "./CategoryListItems";
-// import Link from "next/link";
+import { CategoryListItemsShop } from "./CategoryListItemsShop";
+import Link from "next/link";
 
-// export function CategoryList({ data, stylization }) {
+// export function CategoryListShop({ data, stylization }) {
 //   return (
 //     <>
 //       <ul className={`${stylization} list-none gap-6`}>
@@ -15,7 +15,7 @@
 //                 .replace(",", "")
 //                 .replaceAll(" ", "-")}`}
 //             >
-//               <CategoryListItems data={category} />
+//               <CategoryListItemsShop data={category} />
 //             </Link>
 //           </li>
 //         ))}
@@ -24,12 +24,9 @@
 //   );
 // }
 
-import { CategoryListItems } from "./CategoryListItems";
-import Link from "next/link";
-
-export const CategoryList = ({ data }) => {
+export const CategoryListShop = ({ data }) => {
   return (
-    <ul className="mb-[108px] flex overflow-x-auto list-none gap-6">
+    <ul className="mb-[100px] w-[1224px] flex flex-wrap list-none gap-6">
       {data.map((category) => (
         <li key={category.id} className="cursor-pointer">
           <Link
@@ -38,7 +35,7 @@ export const CategoryList = ({ data }) => {
               .replace(",", "")
               .replaceAll(" ", "-")}`}
           >
-            <CategoryListItems data={category} />
+            <CategoryListItemsShop data={category} />
           </Link>
         </li>
       ))}

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function CategoryListItems({ data }) {
   return (
-    <div className="mb-14">
+    <>
       {data.img_url ? (
         <div className="mb-3.5 flex items-center justify-center overflow-hidden box-border w-[184px] h-[184px] rounded-full">
           <Image
@@ -25,8 +25,7 @@ export function CategoryListItems({ data }) {
           />
         </div>
       )}
-      <p className="text-center">{data.title}</p>
-    </div>
+    </>
   );
 }
 
