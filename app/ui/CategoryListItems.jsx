@@ -15,7 +15,7 @@ export const CategoryListItems = ({ data }) => {
           />
         </div>
       ) : (
-        <div className="mb-3.5 flex items-center justify-center overflow-hidden box-border w-[184px] h-[184px] rounded-full border border-gray-600">
+        <div className="mb-3.5 flex items-center justify-center overflow-hidden box-border w-[184px] h-[184px] rounded-full">
           <Image
             src={"/images/noImageIcon.jpg"}
             alt={data.title}
