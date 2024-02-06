@@ -8,7 +8,7 @@ export const CategoryListItems = ({ data }) => {
         <div className="mb-3.5 flex items-center justify-center overflow-hidden box-border w-[184px] h-[184px] rounded-full">
           <Image
             src={data.img_url}
-            alt="Category"
+            alt={data.title}
             className="block object-cover h-full object-center"
             width={184}
             height={184}
@@ -18,7 +18,7 @@ export const CategoryListItems = ({ data }) => {
         <div className="mb-3.5 flex items-center justify-center overflow-hidden box-border w-[184px] h-[184px] rounded-full border border-gray-600">
           <Image
             src={"/images/noImageIcon.jpg"}
-            alt="Category"
+            alt={data.title}
             className="block object-cover h-full object-center"
             width={184}
             height={184}

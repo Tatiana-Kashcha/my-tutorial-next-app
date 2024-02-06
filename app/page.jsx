@@ -1,7 +1,6 @@
 import { fetchCategory, fetchCatalog } from "./lib/actions";
 import { CatalogList } from "./ui/catalog/CatalogList";
-// import { CategoryList } from "./ui/CategoryList";
-import { CategoryListSklep } from "./ui/CategoryListSklep";
+import { CategoryList } from "./ui/CategoryList";
 
 export const metadata = {
   title: "Home",
@@ -16,8 +15,8 @@ export default async function HomePage() {
     <div className="flex flex-col ">
       <h2 className="mb-4">Home Page</h2>
       <p className="mb-14 text-center">Przeglądaj według kategorii</p>
-      <CategoryListSklep data={dataCategory} />
-      {/* <CategoryList data={dataCategory} /> */}
+
+      <CategoryList data={dataCategory} />
       <CatalogList data={dataCatalog} />
     </div>
   );
