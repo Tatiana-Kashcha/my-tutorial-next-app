@@ -1,4 +1,4 @@
-import { CategoryList } from "../ui/CategoryList";
+import { CategoryListSklep } from "../ui/CategoryListSklep";
 import { fetchCategory } from "../lib/actions";
 
 export const metadata = {
@@ -13,7 +13,7 @@ export default async function SklepPage() {
     <>
       <div>Sklep Page</div>
       <div>BLOCK OF CATEGORY LINKS</div>
-      <CategoryList data={dataCategory} />
+      <CategoryListSklep data={dataCategory} />
     </>
   );
 }

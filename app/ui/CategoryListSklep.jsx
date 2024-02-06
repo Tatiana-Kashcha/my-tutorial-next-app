@@ -1,12 +1,12 @@
 "use client";
 
-import { CategoryListItems } from "./CategoryListItems";
+import { CategoryListItemsSklep } from "./CategoryListItemsSklep";
 import Link from "next/link";
 
-export const CategoryList = ({ data }) => {
+export const CategoryListSklep = ({ data }) => {
   return (
     <>
-      <ul className="mb-[108px] flex overflow-x-auto list-none gap-6">
+      <ul className="mb-[100px] w-[1224px] flex flex-wrap list-none gap-6">
         {data.map((category) => (
           <li key={category.id} className="cursor-pointer">
             <Link
@@ -15,7 +15,7 @@ export const CategoryList = ({ data }) => {
                 .replace(",", "")
                 .replaceAll(" ", "-")}`}
             >
-              <CategoryListItems data={category} />
+              <CategoryListItemsSklep data={category} />
             </Link>
           </li>
         ))}
