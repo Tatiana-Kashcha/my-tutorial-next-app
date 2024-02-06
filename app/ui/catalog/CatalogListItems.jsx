@@ -2,11 +2,12 @@
 import Image from "next/image";
 
 export const CatalogListItems = ({ product }) => {
-  const price = product.price / 100;
+  const price = Number(product.price);
   const discountAmount = (price * product.discount) / 100;
   const discountedPrice = price - discountAmount;
 
-  const newPrice = discountedPrice * 3;
+  // const newPrice = discountedPrice * 3;
+  const newPrice = discountedPrice + discountedPrice + discountedPrice;
   console.log(newPrice);
 
   return (
