@@ -3,10 +3,10 @@
 import { CategoryListItems } from "./CategoryListItems";
 import Link from "next/link";
 
-export function CategoryList({ data }) {
+export function CategoryList({ data, stylization }) {
   return (
     <>
-      <ul className="mb-[108px] flex overflow-x-auto list-none gap-6">
+      <ul className={`${stylization} list-none gap-6`}>
         {data.map((category) => (
           <li key={category.id} className="cursor-pointer">
             <Link

@@ -1,12 +1,12 @@
 "use client";
 
-import { CategoryListItemsSklep } from "./CategoryListItemsSklep";
+import { CategoryListItemsShop } from "./CategoryListItemsShop";
 import Link from "next/link";
 
-export function CategoryListSklep({ data }) {
+export function CategoryListSklep({ data, style }) {
   return (
     <>
-      <ul className="mb-[100px] w-[1224px] flex flex-wrap list-none gap-6">
+      <ul className={`flex ${style} list-none gap-6`}>
         {data.map((category) => (
           <li key={category.id} className="cursor-pointer">
             <Link
@@ -15,7 +15,7 @@ export function CategoryListSklep({ data }) {
                 .replace(",", "")
                 .replaceAll(" ", "-")}`}
             >
-              <CategoryListItemsSklep data={category} />
+              <CategoryListItemsShop data={category} />
             </Link>
           </li>
         ))}

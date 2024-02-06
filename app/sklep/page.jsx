@@ -13,7 +13,10 @@ export default async function SklepPage() {
     <>
       <div>Sklep Page</div>
       <div>BLOCK OF CATEGORY LINKS</div>
-      <CategoryListSklep data={dataCategory} />
+
+      <div className="mb-[100px] w-[1224px]">
+        <CategoryListSklep data={dataCategory} style="flex-wrap" />
+      </div>
     </>
   );
 }
