@@ -1,5 +1,3 @@
-"use client";
-
 import { CatalogCarListItems } from "./CatalogCarListItems";
 
 export const CatalogCarList = ({ data }) => {

@@ -1,5 +1,3 @@
-"use client";
-
 import { CategoryListItemsShop } from "./CategoryListItemsShop";
 import Link from "next/link";
 

@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 // import { CategoryListItems } from "./CategoryListItems";
 // import Link from "next/link";
