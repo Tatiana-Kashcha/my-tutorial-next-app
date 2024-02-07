@@ -1,4 +1,5 @@
-import { CategoryListShop } from "../ui/CategoryListShop";
+// import { CategoryListShop } from "../ui/CategoryListShop";
+import { CategoryList } from "../ui/CategoryList";
 import { fetchCategory } from "../lib/actions";
 
 export const metadata = {
@@ -27,10 +28,12 @@ export default async function SklepPage() {
         stylization="mb-[100px] w-[1224px] flex flex-wrap list-none gap-6"
       /> */}
 
-      <CategoryListShop
+      {/* <CategoryListShop
         data={dataCategory}
         stylization={stylizationCategoryList}
-      />
+      /> */}
+
+      <CategoryList data={dataCategory} stylization={stylizationCategoryList} />
     </>
   );
 }
