@@ -25,12 +25,12 @@ export default async function HomePage() {
         <CategoryList data={dataCategory} stylization="flex overflow-x-auto" />
       </div> */}
 
-      <h2 className="mb-[72px] text-center">Przeglądaj według kategorii</h2>
       {/* <CategoryList
         data={dataCategory}
         stylization="mb-[108px] flex overflow-x-auto list-none gap-6"
       /> */}
 
+      <h2 className="mb-[72px] text-center">Przeglądaj według kategorii</h2>
       <CategoryList data={dataCategory} stylization={stylizationCategoryList} />
 
       <CatalogList data={dataCatalog} />
