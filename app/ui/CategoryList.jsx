@@ -6,7 +6,7 @@ import Link from "next/link";
 export function CategoryList({ data, stylization }) {
   return (
     <>
-      <ul className={`${stylization} list-none gap-6`}>
+      <ul className={stylization}>
         {data.map((category) => (
           <li key={category.id} className="cursor-pointer">
             <Link
@@ -24,8 +24,26 @@ export function CategoryList({ data, stylization }) {
   );
 }
 
-// import { CategoryListItems } from "./CategoryListItems";
-// import Link from "next/link";
+// export function CategoryList({ data, stylization }) {
+//   return (
+//     <>
+//       <ul className={`${stylization} list-none gap-6`}>
+//         {data.map((category) => (
+//           <li key={category.id} className="cursor-pointer">
+//             <Link
+//               href={`/sklep/${category.title
+//                 .toLowerCase()
+//                 .replace(",", "")
+//                 .replaceAll(" ", "-")}`}
+//             >
+//               <CategoryListItems data={category} />
+//             </Link>
+//           </li>
+//         ))}
+//       </ul>
+//     </>
+//   );
+// }
 
 // export const CategoryList = ({ data }) => {
 //   return (

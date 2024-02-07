@@ -8,6 +8,8 @@ export const metadata = {
 
 export default async function SklepPage() {
   const dataCategory = await fetchCategory();
+  const stylizationCategoryList =
+    "mb-[100px] w-[1224px] flex flex-wrap list-none gap-6";
 
   return (
     <>
@@ -16,9 +18,19 @@ export default async function SklepPage() {
 
       {/* <CategoryListShop data={dataCategory} /> */}
 
-      <div className="mb-[100px] w-[1224px]">
+      {/* <div className="mb-[100px] w-[1224px]">
         <CategoryListShop data={dataCategory} stylization="flex flex-wrap" />
-      </div>
+      </div> */}
+
+      {/* <CategoryListShop
+        data={dataCategory}
+        stylization="mb-[100px] w-[1224px] flex flex-wrap list-none gap-6"
+      /> */}
+
+      <CategoryListShop
+        data={dataCategory}
+        stylization={stylizationCategoryList}
+      />
     </>
   );
 }

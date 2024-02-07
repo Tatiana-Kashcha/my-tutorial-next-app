@@ -4,7 +4,7 @@ import Link from "next/link";
 export function CategoryListShop({ data, stylization }) {
   return (
     <>
-      <ul className={`${stylization} list-none gap-6`}>
+      <ul className={stylization}>
         {data.map((category) => (
           <li key={category.id} className="cursor-pointer">
             <Link
@@ -21,6 +21,27 @@ export function CategoryListShop({ data, stylization }) {
     </>
   );
 }
+
+// export function CategoryListShop({ data, stylization }) {
+//   return (
+//     <>
+//       <ul className={`${stylization} list-none gap-6`}>
+//         {data.map((category) => (
+//           <li key={category.id} className="cursor-pointer">
+//             <Link
+//               href={`/sklep/${category.title
+//                 .toLowerCase()
+//                 .replace(",", "")
+//                 .replaceAll(" ", "-")}`}
+//             >
+//               <CategoryListItemsShop data={category} />
+//             </Link>
+//           </li>
+//         ))}
+//       </ul>
+//     </>
+//   );
+// }
 
 // export const CategoryListShop = ({ data }) => {
 //   return (

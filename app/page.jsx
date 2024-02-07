@@ -10,6 +10,8 @@ export const metadata = {
 export default async function HomePage() {
   const dataCategory = await fetchCategory();
   const dataCatalog = await fetchCatalog();
+  const stylizationCategoryList =
+    "mb-[108px] flex overflow-x-auto list-none gap-6";
 
   return (
     <div className="flex flex-col ">
@@ -18,10 +20,19 @@ export default async function HomePage() {
       {/* <h2 className="mb-[72px] text-center">Przeglądaj według kategorii</h2>
       <CategoryList data={dataCategory} /> */}
 
-      <div className="mb-[108px]">
+      {/* <div className="mb-[108px]">
         <h2 className="mb-[72px] text-center">Przeglądaj według kategorii</h2>
         <CategoryList data={dataCategory} stylization="flex overflow-x-auto" />
-      </div>
+      </div> */}
+
+      <h2 className="mb-[72px] text-center">Przeglądaj według kategorii</h2>
+      {/* <CategoryList
+        data={dataCategory}
+        stylization="mb-[108px] flex overflow-x-auto list-none gap-6"
+      /> */}
+
+      <CategoryList data={dataCategory} stylization={stylizationCategoryList} />
+
       <CatalogList data={dataCatalog} />
     </div>
   );
