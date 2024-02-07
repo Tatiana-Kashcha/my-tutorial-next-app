@@ -15,13 +15,13 @@ export default async function HomePage() {
     <div className="flex flex-col ">
       <h2 className="mb-4">Home Page</h2>
 
-      <h2 className="mb-[72px] text-center">Przeglądaj według kategorii</h2>
-      <CategoryList data={dataCategory} />
+      {/* <h2 className="mb-[72px] text-center">Przeglądaj według kategorii</h2>
+      <CategoryList data={dataCategory} /> */}
 
-      {/* <div className="mb-[108px]">
+      <div className="mb-[108px]">
         <h2 className="mb-[72px] text-center">Przeglądaj według kategorii</h2>
         <CategoryList data={dataCategory} stylization="flex overflow-x-auto" />
-      </div> */}
+      </div>
       <CatalogList data={dataCatalog} />
     </div>
   );
