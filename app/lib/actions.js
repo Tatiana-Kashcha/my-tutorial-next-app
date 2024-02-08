@@ -100,6 +100,22 @@ export async function fetchCategory() {
   }
 }
 
+export async function fetchCategoryAndSubcategory() {
+  try {
+    const data = await sql`
+      SELECT
+      id, parent_id, title
+      FROM mytest.category
+      ORDER BY parent_id ASC `;
+
+    const fetchCategoryAndSubcategory = data.rows;
+    return fetchCategoryAndSubcategory;
+  } catch (err) {
+    console.error("Database Error:", err);
+    throw new Error("Failed to fetch data.");
+  }
+}
+
 export async function fetchCatalog() {
   try {
     const data = await sql`
@@ -123,7 +139,7 @@ export async function fetchCatalog() {
     LEFT JOIN mytest.capacity capacity ON capacity.id = cat.capacity_id
     LEFT JOIN mytest.reality reality ON reality.id = cat.reality_id
     LEFT JOIN mytest.pack pack ON pack.id = cat.pack_id
-    ORDER BY price DESC`;
+    ORDER BY id ASC`;
 
     const fetchCatalog = data.rows;
     return fetchCatalog;

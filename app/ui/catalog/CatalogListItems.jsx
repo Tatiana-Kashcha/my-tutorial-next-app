@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { MarkerCard } from "./MarkerCard";
 
 export const CatalogListItems = ({ product }) => {
   const price = Number(product.price);
@@ -33,6 +34,7 @@ export const CatalogListItems = ({ product }) => {
       <p className="mb-2">Odcień: {product.color_title}</p>
       <p className="mb-2">Opakowanie: {product.pack_title}</p>
       <p className="mb-2">Ilość: {product.quantity}Szt</p>
+      <p>{product.popular_title}</p>
 
       <div className="flex flex-wrap gap-5">
         {product.img_url ? (
@@ -40,8 +42,9 @@ export const CatalogListItems = ({ product }) => {
             {product.img_url.map((url) => (
               <div
                 key={url}
-                className="flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 "
+                className="relative flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 "
               >
+                <MarkerCard product={product} />
                 <Image
                   src={url}
                   alt="Product"
@@ -53,7 +56,8 @@ export const CatalogListItems = ({ product }) => {
             ))}
           </div>
         ) : (
-          <div className="flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 ">
+          <div className="relative flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 ">
+            <MarkerCard product={product} />
             <Image
               src={"/images/noImageIcon.jpg"}
               alt="Product"
