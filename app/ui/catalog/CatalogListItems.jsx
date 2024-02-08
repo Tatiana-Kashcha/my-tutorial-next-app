@@ -8,7 +8,7 @@ export const CatalogListItems = ({ product }) => {
 
   // const newPrice = discountedPrice * 3;
   const newPrice = discountedPrice + discountedPrice + discountedPrice;
-  console.log(newPrice);
+  console.log(product);
 
   return (
     <>
