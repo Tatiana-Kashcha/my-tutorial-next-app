@@ -106,7 +106,7 @@ export async function fetchCategoryAndSubcategory() {
       SELECT
       id, parent_id, title
       FROM mytest.category
-      ORDER BY parent_id ASC `;
+      ORDER BY id ASC `;
 
     const fetchCategoryAndSubcategory = data.rows;
     return fetchCategoryAndSubcategory;
