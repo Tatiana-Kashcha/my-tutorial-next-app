@@ -6,68 +6,40 @@ export const CatalogListItems = ({ product }) => {
   const discountAmount = (price * product.discount) / 100;
   const discountedPrice = price - discountAmount;
 
-  // const newPrice = discountedPrice * 3;
-  const newPrice = discountedPrice + discountedPrice + discountedPrice;
-  console.log(product);
-
   return (
-    <>
-      <p className="mb-2">id: {product.id}</p>
-      <p className="mb-2">{product.make}</p>
-      <p className="mb-2">Price: {price.toFixed(2).replace(".", ",")}zł</p>
-      <p className="mb-2">Discount: -{product.discount}%</p>
-      <p className="mb-2">
-        DiscountAmount: {discountAmount.toFixed(2).replace(".", ",")}zł --
-        {discountAmount}zł
-      </p>
-      <p className="mb-2">
-        DiscountedPrice: {discountedPrice.toFixed(2).replace(".", ",")}zł --
-        {discountedPrice}zł
-      </p>
-      <p className="mb-2">
-        DiscountedPrice * 3: {newPrice.toFixed(2).replace(".", ",")}zł --
-        {newPrice}zł
-      </p>
-      <p className="mb-2">Kod: {product.code}</p>
-      <p className="mb-2">Producent: {product.brand_title}</p>
-      <p className="mb-2">Rodzaj: {product.category_title}</p>
-      <p className="mb-2">Odcień: {product.color_title}</p>
-      <p className="mb-2">Opakowanie: {product.pack_title}</p>
-      <p className="mb-2">Ilość: {product.quantity}Szt</p>
-      <p>{product.popular_title}</p>
-
-      <div className="flex flex-wrap gap-5">
-        {product.img_url ? (
-          <div className="flex flex-wrap gap-5">
-            {product.img_url.map((url) => (
-              <div
-                key={url}
-                className="relative flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 "
-              >
-                <MarkerCard product={product} />
-                <Image
-                  src={url}
-                  alt="Product"
-                  className="block object-cover h-full object-center"
-                  width={274}
-                  height={254}
-                />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="relative flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 ">
-            <MarkerCard product={product} />
-            <Image
-              src={"/images/noImageIcon.jpg"}
-              alt="Product"
-              className="block object-cover h-full object-center"
-              width={274}
-              height={254}
-            />
-          </div>
-        )}
+    <div className="w-[288px] h-[519px]">
+      {product.img_url ? (
+        <div className="relative flex items-center justify-center overflow-hidden w-[288px] h-[282px]">
+          <MarkerCard product={product} />
+          <Image
+            src={product.img_url[0]}
+            alt="Product"
+            className="block object-cover h-full object-center"
+            width={288}
+            height={282}
+          />
+        </div>
+      ) : (
+        <div className="relative flex items-center justify-center overflow-hidden w-[288px] h-[282px]">
+          <MarkerCard product={product} />
+          <Image
+            src={"/images/noImageIcon.jpg"}
+            alt="Product"
+            className="block object-cover h-full object-center"
+            width={288}
+            height={282}
+          />
+        </div>
+      )}
+      <div className="p-2 w-[288px] h-[237px] text-center">
+        <p className="mb-2">{product.make}</p>
+        <p className="mb-2">Price: {price.toFixed(2).replace(".", ",")}zł</p>
+        <p className="mb-2">
+          DiscountedPrice: {discountedPrice.toFixed(2).replace(".", ",")}zł
+        </p>
+        <p className="mb-2">{product.quantity}Szt</p>
+        <p className="mb-2">({`Zawiera podatek`})</p>
       </div>
-    </>
+    </div>
   );
 };
