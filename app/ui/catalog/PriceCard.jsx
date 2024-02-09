@@ -6,7 +6,7 @@ export function PriceCard({ product }) {
   return (
     <>
       {product.discount ? (
-        <div className="mb-1 flex items-center justify-center">
+        <div className="flex items-center">
           <p className="mr-1 text-gray-400 text-right line-through">
             {price.toFixed(2).replace(".", ",")}zł
           </p>
@@ -15,11 +15,11 @@ export function PriceCard({ product }) {
           </p>
         </div>
       ) : (
-        <>
-          <p className="mb-2 text-2xl text-blue-800">
+        <div className="flex items-center">
+          <p className="text-2xl text-blue-800">
             {price.toFixed(2).replace(".", ",")}zł
           </p>
-        </>
+        </div>
       )}
     </>
   );
