@@ -1,5 +1,6 @@
 import { ImageCard } from "./ImageCard";
 import { PriceCard } from "./PriceCard";
+import { AvailabilityProduct } from "./AvailabilityProduct";
 
 export const CatalogListItems = ({ product }) => {
   return (
@@ -8,6 +9,7 @@ export const CatalogListItems = ({ product }) => {
 
       <div className="p-2 w-[288px] h-[237px] text-center">
         <p className="mb-2 text-lg">{product.make}</p>
+        <AvailabilityProduct product={product} />
         <div className="mb-1 relative flex justify-center">
           <PriceCard product={product} />
           <div className="absolute flex justify-center items-center right-[0px] top-[0px]">
