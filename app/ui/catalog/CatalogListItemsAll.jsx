@@ -8,6 +8,9 @@ export const CatalogListItemsAll = ({ product }) => {
 
   // const newPrice = discountedPrice * 3;
   const newPrice = discountedPrice + discountedPrice + discountedPrice;
+  const stylizationMarkerCardText = "text-center text-white";
+  const stylizationMarkerCardDiv =
+    "absolute left-[-118px] top-[15px] -rotate-45 w-full";
   console.log(product);
 
   return (
@@ -44,7 +47,11 @@ export const CatalogListItemsAll = ({ product }) => {
                 key={url}
                 className="relative flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 "
               >
-                <MarkerCard product={product} />
+                <MarkerCard
+                  product={product}
+                  stylizationText={stylizationMarkerCardText}
+                  stylizationDiv={stylizationMarkerCardDiv}
+                />
                 <Image
                   src={url}
                   alt="Product"
@@ -57,7 +64,11 @@ export const CatalogListItemsAll = ({ product }) => {
           </div>
         ) : (
           <div className="relative flex items-center justify-center overflow-hidden w-[274px] h-[254px] border border-gray-200 ">
-            <MarkerCard product={product} />
+            <MarkerCard
+              product={product}
+              stylizationText={stylizationMarkerCardText}
+              stylizationDiv={stylizationMarkerCardDiv}
+            />
             <Image
               src={"/images/noImageIcon.jpg"}
               alt="Product"
