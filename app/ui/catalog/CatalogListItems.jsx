@@ -15,7 +15,7 @@ export const CatalogListItems = ({ product }) => {
         <div className="mb-2 relative">
           <PriceCard product={product} />
           <div className="absolute right-[0px] top-[0px]">
-            <HeartIconsFavorite isFavorite={true} />
+            <HeartIconsFavorite isFavorite={false} />
           </div>
         </div>
         <p className="mb-2">Тест: {product.quantity}Szt</p>
