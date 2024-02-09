@@ -1,6 +1,7 @@
 import { ImageCard } from "./ImageCard";
 import { PriceCard } from "./PriceCard";
 import { AvailabilityProduct } from "./AvailabilityProduct";
+import { HeartIconsFavorite } from "./HeartIconsFavorite";
 
 export const CatalogListItems = ({ product }) => {
   return (
@@ -13,8 +14,8 @@ export const CatalogListItems = ({ product }) => {
 
         <div className="mb-2 relative">
           <PriceCard product={product} />
-          <div className="absolute flex justify-center items-center right-[0px] top-[0px]">
-            <div className="box-border w-[32px] h-[32px] border border-blue-800"></div>
+          <div className="absolute right-[0px] top-[0px]">
+            <HeartIconsFavorite isFavorite={true} />
           </div>
         </div>
         <p className="mb-2">Тест: {product.quantity}Szt</p>
