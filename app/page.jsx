@@ -18,7 +18,7 @@ export default async function HomePage() {
   const stylizationCategoryList =
     "mb-[108px] flex overflow-x-auto list-none gap-6";
 
-  console.log(dataCategoryAndSubcategory);
+  // console.log(dataCategoryAndSubcategory);
 
   return (
     <div className="flex flex-col ">

@@ -18,7 +18,6 @@ export const CatalogListItems = ({ product }) => {
             <HeartIconsFavorite isFavorite={false} />
           </div>
         </div>
-        <p className="mb-2">Тест: {product.quantity}Szt</p>
       </div>
     </div>
   );
