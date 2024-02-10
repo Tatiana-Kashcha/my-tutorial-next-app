@@ -1,6 +1,7 @@
 "use client";
 import { organizeCategories } from "../lib/organizeCategories";
 
+// Тимчасовий компонент, щоб подивитися структуру категорій та підкатегорій в консолі.
 export function CategoryOrganize({ data }) {
   const organizedCategories = organizeCategories(data);
   console.log(organizedCategories);
