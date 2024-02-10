@@ -3,7 +3,11 @@ export function organizeCategories(data) {
   data.forEach((category) => {
     categoryList[category.id] = {
       ...category,
-      href: category.name.toLowerCase().replace(",", "").replaceAll(" ", "-"),
+      href: category.name
+        .toLowerCase()
+        .replaceAll(",", "")
+        .replaceAll('"', "")
+        .replaceAll(" ", "-"),
       subCategoryList: [],
     };
   });
