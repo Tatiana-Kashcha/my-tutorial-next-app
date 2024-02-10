@@ -7,7 +7,7 @@ export default async function FavoritePage() {
   const dataCategoryAndSubcategory = await fetchCategoryAndSubcategory();
   console.log(dataCategoryAndSubcategory);
 
-  // Структура категорій та підкатегорій
+  // Адаптований вид структури категорій та підкатегорій
   // const categoryList = organizeCategories(dataCategoryAndSubcategory);
   // console.log(categoryList);
 
