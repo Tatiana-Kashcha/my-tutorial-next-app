@@ -1,7 +1,11 @@
 export function organizeCategories(data) {
   const categoryList = [];
   data.forEach((category) => {
-    categoryList[category.id] = { ...category, subCategoryList: [] };
+    categoryList[category.id] = {
+      ...category,
+      href: category.name.toLowerCase().replace(",", "").replaceAll(" ", "-"),
+      subCategoryList: [],
+    };
   });
 
   data.forEach((category) => {
@@ -14,6 +18,25 @@ export function organizeCategories(data) {
 
   return categoryList.filter((category) => category.parent_id === null);
 }
+
+// Це робоча версія !!!!
+
+// export function organizeCategories(data) {
+//   const categoryList = [];
+//   data.forEach((category) => {
+//     categoryList[category.id] = { ...category, subCategoryList: [] };
+//   });
+
+//   data.forEach((category) => {
+//     if (category.parent_id !== null) {
+//       categoryList[category.parent_id].subCategoryList.push(
+//         categoryList[category.id]
+//       );
+//     }
+//   });
+
+//   return categoryList.filter((category) => category.parent_id === null);
+// }
 
 ////////////////////////////////////////////////////////////////////////////
 // export function organizeCategories(data) {
