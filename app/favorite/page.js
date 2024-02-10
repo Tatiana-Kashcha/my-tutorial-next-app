@@ -4,7 +4,7 @@ import { CategoryOrganize } from "../ui/CategoryOrganize";
 
 export default async function FavoritePage() {
   const dataCategoryAndSubcategory = await fetchCategoryAndSubcategory();
-  // console.log(dataCategoryAndSubcategory);
+  console.log(dataCategoryAndSubcategory);
 
   // const organizedCategories = organizeCategories(dataCategoryAndSubcategory);
   // console.log(organizedCategories);

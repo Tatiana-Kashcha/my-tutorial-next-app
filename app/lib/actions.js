@@ -104,7 +104,7 @@ export async function fetchCategoryAndSubcategory() {
   try {
     const data = await sql`
       SELECT
-      id, parent_id, title
+      id, parent_id, title as name
       FROM mytest.category
       ORDER BY id ASC `;
 

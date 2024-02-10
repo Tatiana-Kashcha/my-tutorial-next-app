@@ -1,18 +1,37 @@
 export function organizeCategories(data) {
-  const categoryMap = [];
+  const categoryList = [];
   data.forEach((category) => {
-    categoryMap[category.id] = { ...category, children: [] };
+    categoryList[category.id] = { ...category, subCategoryList: [] };
   });
 
   data.forEach((category) => {
     if (category.parent_id !== null) {
-      categoryMap[category.parent_id].children.push(categoryMap[category.id]);
+      categoryList[category.parent_id].subCategoryList.push(
+        categoryList[category.id]
+      );
     }
   });
 
-  return categoryMap.filter((category) => category.parent_id === null);
+  return categoryList.filter((category) => category.parent_id === null);
 }
 
+////////////////////////////////////////////////////////////////////////////
+// export function organizeCategories(data) {
+//     const categoryMap = [];
+//     data.forEach((category) => {
+//       categoryMap[category.id] = { ...category, children: [] };
+//     });
+
+//     data.forEach((category) => {
+//       if (category.parent_id !== null) {
+//         categoryMap[category.parent_id].children.push(categoryMap[category.id]);
+//       }
+//     });
+
+//     return categoryMap.filter((category) => category.parent_id === null);
+//   }
+
+////////////////////////////////////////////////////////////////////////////////
 // function organizeCategories(data) {
 //   // Створення масиву об'єктів категорій за їх id
 //   const categoryMap = [];
