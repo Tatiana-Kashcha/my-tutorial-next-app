@@ -92,8 +92,8 @@ export async function fetchCategory() {
       WHERE parent_id IS NULL
       ORDER BY id ASC `;
 
-    const fetchCategory = data.rows;
-    return fetchCategory;
+    const result = data.rows;
+    return result;
   } catch (err) {
     console.error("Database Error:", err);
     throw new Error("Failed to fetch data.");
@@ -108,8 +108,8 @@ export async function fetchCategoryAndSubcategory() {
       FROM mytest.category
       ORDER BY id ASC `;
 
-    const fetchCategoryAndSubcategory = data.rows;
-    return fetchCategoryAndSubcategory;
+    const result = data.rows;
+    return result;
   } catch (err) {
     console.error("Database Error:", err);
     throw new Error("Failed to fetch data.");
@@ -141,8 +141,8 @@ export async function fetchCatalog() {
     LEFT JOIN mytest.pack pack ON pack.id = cat.pack_id
     ORDER BY id ASC`;
 
-    const fetchCatalog = data.rows;
-    return fetchCatalog;
+    const result = data.rows;
+    return result;
   } catch (err) {
     console.error("Database Error:", err);
     throw new Error("Failed to fetch data.");
