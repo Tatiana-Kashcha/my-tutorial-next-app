@@ -57,36 +57,6 @@ export function MarkerCard({ product, stylizationText, stylizationDiv }) {
 // }
 
 // export function MarkerCard({ product }) {
-//   let color = "";
-//   if (product.popular_title) {
-//     color = "absolute left-[-110px] top-[15px] -rotate-45 w-full bg-purple-800";
-//   } else {
-//     color = "absolute left-[-110px] top-[15px] -rotate-45 w-full bg-blue-800";
-//   }
-
-//   return (
-//     <>
-//       {(product.popular_title || product.discount) && (
-//         <div className={color}>
-//           <p className="text-center text-white">
-//             {(() => {
-//               switch (product.popular_title) {
-//                 case "Nowośćі":
-//                   return "New";
-//                 case "Bestsellery":
-//                   return "Best";
-//                 default:
-//                   return `-${product.discount}%`;
-//               }
-//             })()}
-//           </p>
-//         </div>
-//       )}
-//     </>
-//   );
-// }
-
-// export function MarkerCard({ product }) {
 //   return (
 //     <>
 //       {product.popular_title && (
