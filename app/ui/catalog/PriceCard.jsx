@@ -21,7 +21,7 @@ export function PriceCard({ product }) {
           </p>
         )}
       </div>
-      <p className="text-gray-400">({`Zawiera podatek`})</p>
+      <p className="text-gray-400 text-center">({`Zawiera podatek`})</p>
     </>
   );
 }
