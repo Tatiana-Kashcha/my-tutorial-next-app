@@ -11,6 +11,9 @@ export const theme = {
       "gradient-conic":
         "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
     },
+    colors: {
+      "svg-hover": "#3F418D",
+    },
   },
 };
 export const plugins = [];

@@ -3,6 +3,7 @@ import { PriceCard } from "./PriceCard";
 import { AvailabilityProduct } from "./AvailabilityProduct";
 import { HeartIconsFavorite } from "./HeartIconsFavorite";
 import { ButtonCart } from "../ButtonCart";
+import { Butt } from "../Butt";
 
 export function CatalogListItems({ product }) {
   return (
@@ -21,7 +22,8 @@ export function CatalogListItems({ product }) {
             </div>
           </div>
         </>
-        <ButtonCart buttonText={"Do koszyka"} buttonHref={"/kosz"} />
+        {/* <ButtonCart buttonText={"Do koszyka"} buttonHref={"/kosz"} /> */}
+        <Butt buttonText={"Do koszyka"} buttonHref={"/kosz"} />
       </div>
     </div>
   );
