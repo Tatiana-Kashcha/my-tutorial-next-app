@@ -5,7 +5,7 @@ export function PriceCard({ product }) {
 
   return (
     <>
-      <div className="mb-1 flex justify-center items-center">
+      <div className="flex justify-center items-center">
         {product.discount ? (
           <div className="flex items-center">
             <p className="mr-1 text-gray-400 text-right line-through">

@@ -13,7 +13,7 @@ export function CatalogListItems({ product }) {
         <p className="mb-2 text-lg">{product.make}</p>
         <AvailabilityProduct product={product} />
 
-        <div className="mb-auto relative">
+        <div className="mb-2 relative">
           <PriceCard product={product} />
           <div className="absolute right-[0px] top-[0px]">
             <HeartIconsFavorite isFavorite={false} />
@@ -24,6 +24,27 @@ export function CatalogListItems({ product }) {
     </div>
   );
 }
+
+// export function CatalogListItems({ product }) {
+//   return (
+//     <div className="w-[288px] h-[519px]">
+//       <ImageCard product={product} />
+
+//       <div className="p-2 w-[288px] h-[237px] text-center">
+//         <p className="mb-2 text-lg">{product.make}</p>
+//         <AvailabilityProduct product={product} />
+
+//         <div className="mb-2 relative">
+//           <PriceCard product={product} />
+//           <div className="absolute right-[0px] top-[0px]">
+//             <HeartIconsFavorite isFavorite={false} />
+//           </div>
+//         </div>
+//         <ButtonCart buttonText={"Do koszyka"} buttonHref={"/kosz"} />
+//       </div>
+//     </div>
+//   );
+// }
 
 // export const CatalogListItems = ({ product }) => {
 //   return (
