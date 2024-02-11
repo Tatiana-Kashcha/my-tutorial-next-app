@@ -1,8 +1,4 @@
-import {
-  fetchCategory,
-  fetchCatalog,
-  fetchCategoryAndSubcategory,
-} from "./lib/actions";
+import { fetchCategory, fetchCatalog } from "./lib/actions";
 import { CatalogList } from "./ui/catalog/CatalogList";
 import { CategoryList } from "./ui/CategoryList";
 
@@ -13,12 +9,10 @@ export const metadata = {
 
 export default async function HomePage() {
   const dataCategory = await fetchCategory();
-  const dataCategoryAndSubcategory = await fetchCategoryAndSubcategory();
+
   const dataCatalog = await fetchCatalog();
   const stylizationCategoryList =
     "mb-[108px] flex overflow-x-auto list-none gap-6";
-
-  // console.log(dataCategoryAndSubcategory);
 
   return (
     <div className="flex flex-col ">

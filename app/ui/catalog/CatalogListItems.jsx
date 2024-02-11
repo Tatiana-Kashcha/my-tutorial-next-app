@@ -2,8 +2,9 @@ import { ImageCard } from "./ImageCard";
 import { PriceCard } from "./PriceCard";
 import { AvailabilityProduct } from "./AvailabilityProduct";
 import { HeartIconsFavorite } from "./HeartIconsFavorite";
+import { ButtonCart } from "../ButtonCart";
 
-export const CatalogListItems = ({ product }) => {
+export function CatalogListItems({ product }) {
   return (
     <div className="w-[288px] h-[519px]">
       <ImageCard product={product} />
@@ -12,16 +13,17 @@ export const CatalogListItems = ({ product }) => {
         <p className="mb-2 text-lg">{product.make}</p>
         <AvailabilityProduct product={product} />
 
-        <div className="mb-2 relative">
+        <div className="mb-auto relative">
           <PriceCard product={product} />
           <div className="absolute right-[0px] top-[0px]">
             <HeartIconsFavorite isFavorite={false} />
           </div>
         </div>
+        <ButtonCart buttonText={"Do koszyka"} buttonHref={"/kosz"} />
       </div>
     </div>
   );
-};
+}
 
 // export const CatalogListItems = ({ product }) => {
 //   return (

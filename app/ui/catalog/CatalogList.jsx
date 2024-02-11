@@ -1,7 +1,7 @@
 // import { CatalogListItemsAll } from "./CatalogListItemsAll";
 import { CatalogListItems } from "./CatalogListItems";
 
-export const CatalogList = ({ data }) => {
+export function CatalogList({ data }) {
   // console.log(data);
   return (
     <>
@@ -18,4 +18,4 @@ export const CatalogList = ({ data }) => {
       </ul>
     </>
   );
-};
+}
