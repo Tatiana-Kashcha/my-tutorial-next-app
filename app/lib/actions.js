@@ -121,6 +121,25 @@ export async function fetchCatalog() {
     const data = await sql`
     SELECT 
     cat.id, cat.make, cat.price, cat.discount, cat.code,
+    popular.title as popular_title,
+    cat.quantity, cat.img_url
+    FROM mytest.catalog cat
+    LEFT JOIN mytest.popular popular ON popular.id = cat.popular_id
+    ORDER BY id ASC`;
+
+    const result = data.rows;
+    return result;
+  } catch (err) {
+    console.error("Database Error:", err);
+    throw new Error("Failed to fetch data.");
+  }
+}
+
+export async function fetchCatalogAll() {
+  try {
+    const data = await sql`
+    SELECT 
+    cat.id, cat.make, cat.price, cat.discount, cat.code,
     category.title as category_title,
     brand.title as brand_title,
     country.title as country_title,
