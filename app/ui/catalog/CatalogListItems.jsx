@@ -6,24 +6,22 @@ import { ButtonCart } from "../ButtonCart";
 
 export function CatalogListItems({ product }) {
   return (
-    <div className="w-[288px] h-[519px]">
+    <>
       <ImageCard product={product} />
-
       <div className="p-2 w-[288px] h-[237px] flex flex-col justify-between">
-        <>
-          <p className="text-lg text-center">{product.make}</p>
-          <AvailabilityProduct product={product} />
+        <p className="text-lg text-center">{product.make}</p>
+        <AvailabilityProduct product={product} />
 
-          <div className="relative">
-            <PriceCard product={product} />
-            <div className="absolute -translate-y-[3.25rem] translate-x-[15.5rem]">
-              <HeartIconsFavorite product={product} />
-            </div>
+        <div className="relative">
+          <PriceCard product={product} />
+          <div className="absolute -translate-y-[3.25rem] translate-x-[15.5rem]">
+            <HeartIconsFavorite product={product} />
           </div>
-        </>
+        </div>
+
         <ButtonCart buttonText={"Do koszyka"} buttonHref={"/kosz"} />
       </div>
-    </div>
+    </>
   );
 }
 
