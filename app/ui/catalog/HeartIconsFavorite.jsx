@@ -11,7 +11,7 @@ export function HeartIconsFavorite({ product }) {
         e.stopPropagation();
         toggleFavorite(product.id);
       }}
-      className="fill-[#0B32BF] cursor-pointer"
+      className="fill-[#0B32BF] cursor-pointer stroke-[#0B32BF]"
     >
       {isFavorite(product.id) ? <IconFavorite /> : <IconNoFavorite />}
     </div>
