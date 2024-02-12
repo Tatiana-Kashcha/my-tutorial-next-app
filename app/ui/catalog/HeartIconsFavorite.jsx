@@ -1,7 +1,7 @@
 "use client";
 import { useFavorites } from "@/app/lib/useFavorites";
-import { IconNoFavorite } from "@/public/icons/IconNoFavorite";
-import { IconFavorite } from "@/public/icons/IconFavorite";
+// import { IconNoFavorite } from "@/public/icons/IconNoFavorite";
+// import { IconFavorite } from "@/public/icons/IconFavorite";
 
 export function HeartIconsFavorite({ product }) {
   const [, isFavorite, toggleFavorite] = useFavorites();
@@ -11,12 +11,38 @@ export function HeartIconsFavorite({ product }) {
         e.stopPropagation();
         toggleFavorite(product.id);
       }}
-      className="fill-[#0B32BF] cursor-pointer stroke-[#0B32BF]"
+      className="cursor-pointer"
     >
-      {isFavorite(product.id) ? <IconFavorite /> : <IconNoFavorite />}
+      {!isFavorite(product.id) && <p>NoFavorite</p>}
+      {isFavorite(product.id) && <p>Favorite</p>}
     </div>
   );
 }
+
+// export function HeartIconsFavorite({ product }) {
+//   const [, isFavorite, toggleFavorite] = useFavorites();
+//   return (
+//     // <div
+//     //   onClick={(e) => {
+//     //     e.stopPropagation();
+//     //     toggleFavorite(product.id);
+//     //   }}
+//     //   className="fill-[#0B32BF] cursor-pointer stroke-[#0B32BF]"
+//     // >
+//     //   {isFavorite(product.id) ? <IconFavorite /> : <IconNoFavorite />}
+//     // </div>
+
+//     <div
+//       onClick={(e) => {
+//         e.stopPropagation();
+//         toggleFavorite(product.id);
+//       }}
+//       className="cursor-pointer"
+//     >
+//       {isFavorite(product.id) ? <IconFavorite /> : <IconNoFavorite />}
+//     </div>
+//   );
+// }
 
 // export function HeartIconsFavorite({ isFavorite }) {
 //   return (

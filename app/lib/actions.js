@@ -127,7 +127,7 @@ export async function fetchCatalog() {
     popular.title as popular_title,
     color.title as color_title,
     capacity.volume as capacity_volume,
-    reality.title as reality_title,
+    availability.title as availability_title,
     pack.title as pack_title,
     cat.quantity, cat.img_url
     FROM mytest.catalog cat
@@ -137,7 +137,7 @@ export async function fetchCatalog() {
     LEFT JOIN mytest.popular popular ON popular.id = cat.popular_id
     LEFT JOIN mytest.color color ON color.id = cat.color_id
     LEFT JOIN mytest.capacity capacity ON capacity.id = cat.capacity_id
-    LEFT JOIN mytest.reality reality ON reality.id = cat.reality_id
+    LEFT JOIN mytest.availability availability ON availability.id = cat.availability_id
     LEFT JOIN mytest.pack pack ON pack.id = cat.pack_id
     ORDER BY id ASC`;
 
