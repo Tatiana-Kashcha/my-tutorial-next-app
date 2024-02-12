@@ -11,6 +11,7 @@ export const CategoryListItems = ({ data }) => {
             className="block object-cover h-full object-center"
             width={184}
             height={184}
+            priority={true}
           />
         </div>
       ) : (

@@ -1,10 +1,19 @@
+"use client";
+import { useFavorites } from "@/app/lib/useFavorites";
 import { IconNoFavorite } from "@/public/icons/IconNoFavorite";
 import { IconFavorite } from "@/public/icons/IconFavorite";
 
-export function HeartIconsFavorite({ isFavorite }) {
+export function HeartIconsFavorite({ product }) {
+  const [, isFavorite, toggleFavorite] = useFavorites();
   return (
-    <div className="fill-[#0B32BF]">
-      {isFavorite ? <IconFavorite /> : <IconNoFavorite />}
+    <div
+      onClick={(e) => {
+        e.stopPropagation();
+        toggleFavorite(product.id);
+      }}
+      className="fill-[#0B32BF] cursor-pointer"
+    >
+      {isFavorite(product.id) ? <IconFavorite /> : <IconNoFavorite />}
     </div>
   );
 }

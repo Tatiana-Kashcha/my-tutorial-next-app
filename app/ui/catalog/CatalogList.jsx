@@ -9,7 +9,7 @@ export function CatalogList({ data }) {
         {data.map((product) => (
           <li
             key={product.id}
-            className="rounded-lg bg-center bg-cover bg-no-repeat object-cover cursor-pointer"
+            className="rounded-lg bg-center bg-cover bg-no-repeat object-cover"
           >
             {/* <CatalogListItemsAll product={product} /> */}
             <CatalogListItems product={product} />

@@ -17,7 +17,7 @@ export function CatalogListItems({ product }) {
           <div className="relative">
             <PriceCard product={product} />
             <div className="absolute -translate-y-[3.25rem] translate-x-[15.5rem]">
-              <HeartIconsFavorite isFavorite={false} />
+              <HeartIconsFavorite product={product} />
             </div>
           </div>
         </>

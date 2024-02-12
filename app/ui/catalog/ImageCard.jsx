@@ -7,7 +7,7 @@ export function ImageCard({ product }) {
     "absolute -rotate-45 w-full -translate-y-[7.5rem] -translate-x-[7.5rem]";
 
   return (
-    <div className="relative flex items-center justify-center overflow-hidden w-[288px] h-[282px]">
+    <div className="relative flex items-center justify-center overflow-hidden w-[288px] h-[282px] cursor-pointer">
       <MarkerCard
         product={product}
         stylizationText={stylizationMarkerCardText}
@@ -19,6 +19,7 @@ export function ImageCard({ product }) {
         className="block object-cover h-full object-center"
         width={288}
         height={282}
+        priority={true}
       />
     </div>
   );
