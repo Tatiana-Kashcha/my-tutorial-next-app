@@ -13,8 +13,8 @@ export function HeartIconsFavorite({ product }) {
       }}
       className="cursor-pointer"
     >
-      {!isFavorite(product.id) && <p>NoFavorite</p>}
-      {isFavorite(product.id) && <p>Favorite</p>}
+      {!isFavorite(product.id) && <p>svg</p>}
+      {isFavorite(product.id) && <p>svg</p>}
     </div>
   );
 }

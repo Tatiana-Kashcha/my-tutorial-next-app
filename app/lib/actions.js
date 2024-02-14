@@ -120,7 +120,7 @@ export async function fetchCatalog() {
   try {
     const data = await sql`
     SELECT 
-    cat.id, cat.make, cat.price, cat.discount, cat.code,
+    cat.id, cat.make, cat.price, cat.discount,
     popular.title as popular_title,
     cat.quantity, cat.img_url
     FROM mytest.catalog cat
@@ -139,7 +139,7 @@ export async function fetchCatalogAll() {
   try {
     const data = await sql`
     SELECT 
-    cat.id, cat.make, cat.price, cat.discount, cat.code,
+    cat.id, cat.make, cat.price, cat.discount,
     category.title as category_title,
     brand.title as brand_title,
     country.title as country_title,

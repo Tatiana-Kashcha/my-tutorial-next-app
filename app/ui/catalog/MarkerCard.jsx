@@ -26,6 +26,28 @@ export function MarkerCard({ product, stylizationText, stylizationDiv }) {
     </>
   );
 }
+// робоча
+// export function MarkerCard({ product, stylizationDiv }) {
+//   return (
+//     product.popular_title &&
+//     (() => {
+//       switch (product.popular_title) {
+//         case 'Nowośći':
+//           return <p className={`${stylizationDiv} bg-purple-800`}>New</p>;
+//         case 'Bestsellery':
+//           return <p className={`${stylizationDiv} bg-purple-800`}>Best</p>;
+//         case 'Promocje':
+//           return (
+//             <p className={`${stylizationDiv} bg-blue-800`}>
+//               -{product.discount}%
+//             </p>
+//           );
+//         default:
+//           return '';
+//       }
+//     })()
+//   );
+// }
 
 // export function MarkerCard({ product }) {
 //   return (

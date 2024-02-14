@@ -274,7 +274,7 @@ export default function CreateForm({ myPreset }) {
 
       <CldUploadWidget
         uploadPreset={myPreset}
-        options={{ folder: "my-test" }}
+        options={{ folder: "nowo" }}
         onSuccess={(results) => {
           setSecureUrl4(results.info.secure_url);
           setOriginalFilename4(results.info.original_filename);

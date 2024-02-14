@@ -10,7 +10,7 @@ export const metadata = {
 export default async function HomePage() {
   const dataCategory = await fetchCategory();
 
-  const dataCatalogAll = await fetchCatalogAll();
+  // const dataCatalogAll = await fetchCatalogAll();
   const dataCatalog = await fetchCatalog();
 
   const stylizationCategoryList =

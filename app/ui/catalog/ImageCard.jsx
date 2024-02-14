@@ -5,6 +5,10 @@ export function ImageCard({ product }) {
   const stylizationMarkerCardText = "text-center text-white";
   const stylizationMarkerCardDiv =
     "absolute -rotate-45 w-full -translate-y-[7.5rem] -translate-x-[7.5rem]";
+  const color1 = "bg-[#1da1f2]";
+
+  const color = "#ffffff";
+  const color2 = `bg-[${color}]`;
 
   return (
     <div className="relative flex items-center justify-center overflow-hidden w-[288px] h-[282px] cursor-pointer">
