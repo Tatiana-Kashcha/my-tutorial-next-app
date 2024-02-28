@@ -1,10 +1,4 @@
-import {
-  fetchCategory,
-  fetchCatalog,
-  fetchCatalogAll,
-  fetchMaxPriceCatalog,
-  fetchMinPriceCatalog,
-} from "./lib/actions";
+import { fetchCategory, fetchCatalog } from "./lib/actions";
 import { CatalogList } from "./ui/catalog/CatalogList";
 import { CategoryList } from "./ui/CategoryList";
 
@@ -18,10 +12,6 @@ export default async function HomePage() {
 
   // const dataCatalogAll = await fetchCatalogAll();
   const dataCatalog = await fetchCatalog();
-  const maxPriceCatalog = await fetchMaxPriceCatalog();
-  const minPriceCatalog = await fetchMinPriceCatalog();
-  console.log(maxPriceCatalog);
-  console.log(minPriceCatalog);
 
   const stylizationCategoryList =
     "mb-[108px] flex overflow-x-auto list-none gap-6";
@@ -30,24 +20,10 @@ export default async function HomePage() {
     <div className="flex flex-col ">
       <h2 className="mb-4">Home Page</h2>
 
-      {/* <h2 className="mb-[72px] text-center">Przeglądaj według kategorii</h2>
-      <CategoryList data={dataCategory} /> */}
-
-      {/* <div className="mb-[108px]">
-        <h2 className="mb-[72px] text-center">Przeglądaj według kategorii</h2>
-        <CategoryList data={dataCategory} stylization="flex overflow-x-auto" />
-      </div> */}
-
-      {/* <CategoryList
-        data={dataCategory}
-        stylization="mb-[108px] flex overflow-x-auto list-none gap-6"
-      /> */}
-
       <h2 className="mb-[72px] text-center">Przeglądaj według kategorii</h2>
       <CategoryList data={dataCategory} stylization={stylizationCategoryList} />
 
       <CatalogList data={dataCatalog} />
-      {/* <CatalogList data={dataCatalogAll} /> */}
     </div>
   );
 }
