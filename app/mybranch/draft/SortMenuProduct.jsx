@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { useUpdateQueryString } from '@/app/hooks';
-import { ButtonWithText } from './buttons';
+import { useState, useEffect } from "react";
+import { useUpdateQueryString } from "@/app/hooks";
+import { ButtonWithText } from "./buttons";
 
-import { SwitchTriangle } from './common';
+import { SwitchTriangle } from "./common";
 
-export function SortMenuProduct({ sortMenuData, searchSort = 'id' }) {
+export function SortMenuProduct({ sortMenuData, searchSort = "id" }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(searchSort);
   const updateQueryString = useUpdateQueryString();
@@ -20,7 +20,7 @@ export function SortMenuProduct({ sortMenuData, searchSort = 'id' }) {
     updateQueryString({ sort: selectedProduct });
   };
 
-  const onOptionClick = value => {
+  const onOptionClick = (value) => {
     setSelectedProduct(value);
   };
 
@@ -35,7 +35,7 @@ export function SortMenuProduct({ sortMenuData, searchSort = 'id' }) {
           <p className="flex-center mr-4 flex">Sortowanie:</p>
           <select
             value={selectedProduct}
-            onChange={e => setSelectedProduct(e.target.value)}
+            onChange={(e) => setSelectedProduct(e.target.value)}
             onClick={onClick}
             className="text-accent peer flex cursor-pointer select-none appearance-none bg-transparent pr-5 text-base transition-all after:absolute after:right-0 after:top-0 after:h-full after:w-full after:ease-in-out checked:bg-accent-200 focus:text-primary-900 focus:outline-none lap:min-w-[170px]"
           >
@@ -61,7 +61,7 @@ export function SortMenuProduct({ sortMenuData, searchSort = 'id' }) {
             {sortMenuData.map(({ id, text, value }) => (
               <ButtonWithText
                 click={() => onOptionClick(value)}
-                buttonStyle={`flex h-[44px] w-full flex-col justify-center border-b border-primary px-5 py-4 text-body1 ${selectedProduct === value ? 'bg-accent-200 ' : ''}`}
+                buttonStyle={`flex h-[44px] w-full flex-col justify-center border-b border-primary px-5 py-4 text-body1 ${selectedProduct === value ? "bg-accent-200 " : ""}`}
                 key={id}
                 buttonText={text}
                 value={value}
