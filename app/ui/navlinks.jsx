@@ -10,6 +10,7 @@ const links = [
   { name: "Favorite", href: "/favorite" },
   { name: "Admin", href: "/admin" },
   { name: "Sklep", href: "/sklep" },
+  { name: "Kosz", href: "/kosz" },
 ];
 
 export default function NavLinks() {
