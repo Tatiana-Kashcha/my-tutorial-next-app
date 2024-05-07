@@ -10,23 +10,11 @@ import {
   ThreeDotsIcon,
 } from '@/public/icons';
 
-export function Pagination({ searchPage = 1, totalProducts, searchData }) {
+export function Pagination({ searchPage, totalPages, searchData }) {
   const { page, ...filteredSearchData } = searchData;
 
   const [currentPage, setCurrentPage] = useState(searchPage);
   const [currentData, setCurrentData] = useState(filteredSearchData);
-
-  const pageSize = 6; // Кількість записів на одній сторінці
-  let totalPages = 1; // Кількість сторінок
-  if (totalProducts > pageSize) {
-    totalPages = Math.ceil(totalProducts / pageSize);
-  }
-  console.log(totalPages);
-  console.log(totalProducts);
-  console.log(currentPage);
-  console.log(searchData);
-  console.log(filteredSearchData);
-  console.log(currentData);
 
   const updateQueryString = useUpdateQueryString();
 
@@ -34,24 +22,20 @@ export function Pagination({ searchPage = 1, totalProducts, searchData }) {
     return JSON.stringify(currentData) !== JSON.stringify(filteredSearchData);
   };
   const searchDataChanged = dataChanged(currentData);
-  console.log(searchDataChanged);
-
-  //   useEffect(() => {
-  //     // if (searchDataChanged & (currentPage !== 1)) {
-  //     //   // updateQueryString({}, ['page']);
-  //     //   console.log('true');
-  //     // }
-  //     console.log('true');
-  //   }, [searchDataChanged, currentPage]);
 
   useEffect(() => {
-    setCurrentPage(searchPage);
-    console.log('true');
-  }, [searchPage]);
+    if (searchDataChanged & (currentPage !== 1)) {
+      setCurrentPage(1);
+    }
+  }, [searchDataChanged, currentPage]);
+
+  useEffect(() => {
+    updateQueryString({ page: currentPage });
+  }, [currentPage, updateQueryString]);
 
   const handlePageChange = pageNumber => {
-    setCurrentPage(pageNumber);
     setCurrentData(filteredSearchData);
+    setCurrentPage(pageNumber);
     updateQueryString({ page: pageNumber });
   };
 
@@ -67,7 +51,7 @@ export function Pagination({ searchPage = 1, totalProducts, searchData }) {
 
   return (
     totalPages > 1 && (
-      <div className="flex-center mt-6 justify-end">
+      <div className="mt-6 flex items-center justify-center tab:justify-end">
         <ButtonWithSvg
           click={() => handlePageChange(currentPage - 1)}
           buttonSvgComponent={<ChevronLeftIcon fill="currentColor" />}
@@ -75,33 +59,56 @@ export function Pagination({ searchPage = 1, totalProducts, searchData }) {
           disabled={currentPage === 1}
         />
 
-        {/* {numberPageArray.map((value) => (
-          <ButtonWithText
-            key={value}
-            click={() => handlePageChange(value)}
-            buttonStyle={`flex h-[44px] w-[44px] flex-center ${currentPage === value ? 'bg-accent-100 ' : ''}`}
-            value={value}
-            buttonText={value}
-          ></ButtonWithText>
-        ))} */}
-
         {numberPageArray.map((value, idx) => {
           return (
             <div key={idx}>
-              {idx === 3 ? (
-                <ButtonWithSvg
-                  click={() => updateQueryString({}, ['page'])}
-                  buttonSvgComponent={<ThreeDotsIcon />}
-                  buttonStyle="flex-center w-[44px] h-[44px]"
-                />
-              ) : (
-                // <ThreeDotsIcon />
+              {totalPages <= 5 && (
                 <ButtonWithText
                   click={() => handlePageChange(value)}
                   buttonStyle={`flex h-[44px] w-[44px] flex-center ${currentPage === value ? 'bg-accent-100 ' : ''}`}
                   value={value}
                   buttonText={value}
                 ></ButtonWithText>
+              )}
+              {totalPages > 5 && (
+                <div>
+                  {(idx === 3 &&
+                    (currentPage === 1 ||
+                      currentPage === 2 ||
+                      currentPage === 3)) ||
+                  ((idx === 1 || idx === totalPages - 2) &&
+                    currentPage > 3 &&
+                    currentPage < totalPages - 2) ||
+                  (idx === totalPages - 4 &&
+                    (currentPage === totalPages ||
+                      currentPage === totalPages - 1 ||
+                      currentPage === totalPages - 2)) ? (
+                    <div className="flex-center flex h-[44px] w-[44px]">
+                      <ThreeDotsIcon />
+                    </div>
+                  ) : (
+                    (idx === 0 ||
+                      idx === totalPages - 1 ||
+                      ((idx === 1 || idx === 2) &&
+                        (currentPage === 1 ||
+                          currentPage === 2 ||
+                          currentPage === 3)) ||
+                      (currentPage > 3 &&
+                        currentPage < totalPages - 2 &&
+                        currentPage === value) ||
+                      ((idx === totalPages - 2 || idx === totalPages - 3) &&
+                        (currentPage === totalPages ||
+                          currentPage === totalPages - 1 ||
+                          currentPage === totalPages - 2))) && (
+                      <ButtonWithText
+                        click={() => handlePageChange(value)}
+                        buttonStyle={`flex h-[44px] w-[44px] flex-center ${currentPage === value ? 'bg-accent-100 ' : ''}`}
+                        value={value}
+                        buttonText={value}
+                      ></ButtonWithText>
+                    )
+                  )}
+                </div>
               )}
             </div>
           );
